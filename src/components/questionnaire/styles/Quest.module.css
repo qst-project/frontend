@@ -1,0 +1,11 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}

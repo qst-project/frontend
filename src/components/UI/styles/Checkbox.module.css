@@ -1,0 +1,38 @@
+label {
+  display: inline-block;
+  background-color: rgb(49, 49, 49);
+  color: rgb(139, 139, 139);
+  padding: 6px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 12px rgb(31, 31, 31);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+label:hover {
+  box-shadow: 0px 0px 16px rgba(59, 255, 213, 0.555);
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+}
+
+.bulb {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 10px;
+  margin-left: -6px;
+  border-radius: 15%;
+  background-color: rgb(32, 32, 32);
+  transition: 0.2s;
+}
+
+input:checked + .bulb {
+  background-color: rgb(59, 255, 213);
+  box-shadow: 0px 0px 12px rgb(59, 255, 213);
+}
