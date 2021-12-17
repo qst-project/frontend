@@ -1,3 +1,5 @@
+$col1: #62e7ff;
+
 body {
   color: rgb(189, 189, 189);
   font-family: 'Ubuntu', sans-serif;
@@ -15,8 +17,8 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 40px;
-  background-color: #2AA5A0;
-  background-image: linear-gradient(90deg, #62e7ff, #11ff9c);
+  background-color: $col1;
+  background-image: linear-gradient(90deg, $col1, #11ff9c);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

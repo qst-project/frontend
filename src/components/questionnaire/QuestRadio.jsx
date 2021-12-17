@@ -1,6 +1,6 @@
 import React from 'react';
 import Radio from '../UI/Radio';
-import styles from './styles/QuestRadio.module.css'
+import styles from './styles/QuestRadio.module.scss'
 
 const QuestRadio = (props) => {
   return (

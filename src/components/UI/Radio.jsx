@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/Radio.module.css';
+import styles from './styles/Radio.module.scss';
 
 const Radio = (props) => {
   return (

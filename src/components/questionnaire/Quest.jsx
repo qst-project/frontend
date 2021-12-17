@@ -1,7 +1,7 @@
 import React from 'react';
 import QuestCheckbox from './QuestCheckbox';
 import QuestRadio from './QuestRadio';
-import styles from './styles/Quest.module.css';
+import styles from './styles/Quest.module.scss';
 
 let questions = [
   {

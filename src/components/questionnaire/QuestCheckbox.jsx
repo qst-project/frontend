@@ -1,6 +1,6 @@
 import React from 'react';
 import Checkbox from '../UI/Checkbox';
-import styles from './styles/QuestCheckbox.module.css'
+import styles from './styles/QuestCheckbox.module.scss'
 
 const QuestCheckbox = (props) => {
   return (
