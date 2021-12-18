@@ -1,4 +1,5 @@
 import React from 'react';
+import BtnSubmit from '../UI/BtnSubmit';
 import QuestCheckbox from './QuestCheckbox';
 import QuestRadio from './QuestRadio';
 import styles from './styles/Quest.module.scss';
@@ -25,21 +26,25 @@ let questions = [
       'Working conditions',
       'Opportunity for career growth'
     ]
-  }
+  },
 ]
 
 const Quest = () => {
   return (
     <div className={styles.main}>
       <h2>My survey</h2>
-      {questions.map(question => {
-        switch (question.type) {
-          case 'radio':
-            return <QuestRadio question={question}/>
-          case 'checkbox':
-            return <QuestCheckbox question={question}/>
-        }
-      })}
+      <div className={styles.questions}>
+        {questions.map(question => {
+          switch (question.type) {
+            case 'radio':
+              return <QuestRadio question={question}/>
+            case 'checkbox':
+              return <QuestCheckbox question={question}/>
+          }
+        })}
+      </div>
+        
+      <BtnSubmit>Submit</BtnSubmit>
     </div>
   );
 };

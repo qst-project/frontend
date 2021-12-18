@@ -1,5 +1,3 @@
-$col1: #62e7ff;
-
 body {
   color: rgb(189, 189, 189);
   font-family: 'Ubuntu', sans-serif;
@@ -17,11 +15,6 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 40px;
-  background-color: $col1;
-  background-image: linear-gradient(90deg, $col1, #11ff9c);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 h3 {
@@ -32,6 +25,10 @@ h3 {
 .container {
   width: 60%;
   margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* полоса прокрутки (скроллбар) */

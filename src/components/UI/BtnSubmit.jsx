@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './styles/BtnSubmit.module.scss';
 
-const BtnSubmit = () => {
+const BtnSubmit = (props) => {
   return (
-    <button>
-      
+    <button className={styles.btnSubmit}>
+      {props.children}
     </button>
   );
 };
