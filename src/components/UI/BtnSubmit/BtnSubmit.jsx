@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles/BtnSubmit.module.scss';
+import styles from './BtnSubmit.module.scss';
 
 const BtnSubmit = (props) => {
   return (

@@ -1,16 +1,14 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import Background from "./components/background/Background";
-import Header from "./components/header/Header";
-import Quest from "./components/questionnaire/Quest";
+import * as comp from './components';
 import './main.scss';
 
 function App() {
   return (
     <BrowserRouter>
-      <Background/>
-      <Header/>
+      <comp.Background/>
+      <comp.Header/>
       <div className='container'>
-        <Quest/>
+        <comp.Quest/>
       </div>
     </BrowserRouter>
   );

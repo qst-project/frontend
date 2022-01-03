@@ -1,8 +1,8 @@
 import React from 'react';
-import BtnSubmit from '../UI/BtnSubmit';
-import QuestCheckbox from './QuestCheckbox';
-import QuestRadio from './QuestRadio';
-import styles from './styles/Quest.module.scss';
+import BtnSubmit from '../../UI/BtnSubmit/BtnSubmit';
+import QuestCheckbox from '../QuestCheckbox/QuestCheckbox';
+import QuestRadio from '../QuestRadio/QuestRadio';
+import styles from './Quest.module.scss';
 
 let questions = [
   {
