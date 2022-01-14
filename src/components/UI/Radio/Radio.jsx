@@ -1,12 +1,11 @@
 import React from 'react';
-import styles from './Radio.module.scss';
 
 const Radio = (props) => {
   return (
-    <div className={styles.radio}>
+    <div>
       <label>
         <input type="radio" name={props.name}/>
-        <div className={styles.bulb}></div>
+        <div className="bulb"></div>
         {props.label}
       </label>
     </div>

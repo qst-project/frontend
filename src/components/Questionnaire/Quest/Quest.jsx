@@ -2,7 +2,6 @@ import React from 'react';
 import BtnSubmit from '../../UI/BtnSubmit/BtnSubmit';
 import QuestCheckbox from '../QuestCheckbox/QuestCheckbox';
 import QuestRadio from '../QuestRadio/QuestRadio';
-import styles from './Quest.module.scss';
 
 let questions = [
   {
@@ -31,9 +30,9 @@ let questions = [
 
 const Quest = () => {
   return (
-    <div className={styles.main}>
+    <div>
       <h2>My survey</h2>
-      <div className={styles.questions}>
+      <div>
         {questions.map(question => {
           switch (question.type) {
             case 'radio':
