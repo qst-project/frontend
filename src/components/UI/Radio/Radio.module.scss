@@ -1,38 +1,38 @@
-label {
-  display: inline-block;
-  background-color: $col3;
-  color: rgb(139, 139, 139);
-  padding: 6px 20px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0px 0px 12px rgb(31, 31, 31);
-  cursor: pointer;
-  transition: 0.4s;
-}
+// label {
+//   display: inline-block;
+//   background-color: grey;
+//   color: rgb(139, 139, 139);
+//   padding: 6px 20px;
+//   border-radius: 10px;
+//   margin-bottom: 10px;
+//   box-shadow: 0px 0px 12px rgb(31, 31, 31);
+//   cursor: pointer;
+//   transition: 0.4s;
+// }
 
-label:hover {
-  box-shadow: 0px 0px 16px $col7;
-}
+// label:hover {
+//   box-shadow: 0px 0px 16px red;
+// }
 
-input {
-  appearance: none;
-  -webkit-appearance: none;
-  position: absolute;
-}
+// input {
+//   appearance: none;
+//   -webkit-appearance: none;
+//   position: absolute;
+// }
 
-.bulb {
-  content: "";
-  display: inline-block;
-  height: 12px;
-  width: 12px;
-  margin-right: 10px;
-  margin-left: -6px;
-  border-radius: 50%;
-  background-color: $col1;
-  transition: 0.2s;
-}
+// .bulb {
+//   content: "";
+//   display: inline-block;
+//   height: 12px;
+//   width: 12px;
+//   margin-right: 10px;
+//   margin-left: -6px;
+//   border-radius: 50%;
+//   background-color: black;
+//   transition: 0.2s;
+// }
 
-input:checked + .bulb {
-  background-color: $col6;
-  box-shadow: 0px 0px 10px 1px $col6;
-}
+// input:checked + .bulb {
+//   background-color: red;
+//   box-shadow: 0px 0px 10px 1px red;
+// }

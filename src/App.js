@@ -6,7 +6,7 @@ function App() {
     <BrowserRouter>
       <comp.Background/>
       <comp.Header/>
-      <div className='container'>
+      <div className='container mx-auto'>
         <comp.Quest/>
       </div>
     </BrowserRouter>

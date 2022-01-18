@@ -26,13 +26,36 @@ let questions = [
       'Opportunity for career growth'
     ]
   },
+
+  {
+    type: 'radio',
+    key: '1',
+    question: 'How did you find out about the vacancy of our Company?',
+    answers: [
+      'Company website',
+      'HeadHunter',
+      'From friends',
+      'Other'
+    ]
+  },
+
+  {
+    type: 'checkbox',
+    key: '2',
+    question: 'What did you like our company?',
+    answers: [
+      'Salary',
+      'Working conditions',
+      'Opportunity for career growth'
+    ]
+  },
 ]
 
 const Quest = () => {
   return (
-    <div>
-      <h2>My survey</h2>
-      <div>
+    <div className='w-full'>
+      <h2 className='text-lg text-white uppercase tracking-[18px] text-center mt-[100px]'>My survey</h2>
+      <div className='mt-[100px]'>
         {questions.map(question => {
           switch (question.type) {
             case 'radio':
