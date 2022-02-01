@@ -26,29 +26,6 @@ let questions = [
       'Opportunity for career growth'
     ]
   },
-
-  {
-    type: 'radio',
-    key: '1',
-    question: 'How did you find out about the vacancy of our Company?',
-    answers: [
-      'Company website',
-      'HeadHunter',
-      'From friends',
-      'Other'
-    ]
-  },
-
-  {
-    type: 'checkbox',
-    key: '2',
-    question: 'What did you like our company?',
-    answers: [
-      'Salary',
-      'Working conditions',
-      'Opportunity for career growth'
-    ]
-  },
 ]
 
 const Quest = () => {

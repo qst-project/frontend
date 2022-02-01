@@ -6,7 +6,7 @@ const Header = () => {
       <div className='container mx-auto py-2 flex justify-between'>
         <div></div>
         <div className='flex items-center'>
-          <p className='mr-[12px]'>Profile</p>
+          <p className='mr-2'>Profile</p>
           <div className=' bg-gradient-to-br from-grey-3 to-grey-2 rounded-full w-[30px] h-[30px] flex justify-center items-center'>
             <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M9.87731 18.5982C6.96275 18.5982 4.47375 18.1173 4.47375 16.1914C4.47375 14.2656 6.94696 12.4876 9.87731 12.4876C12.792 12.4876 15.2809 14.2483 15.2809 16.1742C15.2809 18.0993 12.8078 18.5982 9.87731 18.5982Z" stroke="#DCDCDC" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

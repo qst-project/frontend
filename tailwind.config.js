@@ -10,10 +10,10 @@ module.exports = {
     },
     colors: {
       'white': '#ffffff',
-      'white-003': 'rgba(255, 255, 255, 0.03)',
+      'white-003': 'rgba(255, 255, 255, 0.02)',
       'black-02': 'rgba(0, 0, 0, 0.2)',
       'black-003': 'rgba(0, 0, 0, 0.03)',
-      'grey-1': '#181818',
+      'grey-1': '#0F0F0F',
       'grey-2': '#181818',
       'grey-3': '#404040',
       'grey-4': '#5A5A5A',
@@ -36,7 +36,7 @@ module.exports = {
     },
     boxShadow: {
       header: '0 -3px 39px rgba(0, 0, 0, 0.65)',
-      box: '15px 14px 60px -3px rgba(0, 0, 0, 0.65)',
+      box: '15px 14px 28px -3px rgba(0, 0, 0, 0.65)',
     },
     container: {
       padding: {
