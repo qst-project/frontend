@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .trans-dark {
+    @apply transition-opacity duration-700 dark:opacity-0;
+  }
+
+  .trans-light {
+    @apply  transition-opacity duration-700 opacity-0 dark:opacity-100;
+  }
+
+  .trans-text {
+    @apply transition-text duration-700;
+  }
+
+  .trans-bg {
+    @apply transition-bg duration-700;
+  }
+}

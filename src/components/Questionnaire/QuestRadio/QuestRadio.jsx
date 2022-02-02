@@ -3,9 +3,11 @@ import Radio from '../../UI/Radio/Radio';
 
 const QuestRadio = (props) => {
   return (
-    <div className='shadow-box mb-10 p-[36px] bg-gradient-to-br from-grey-3 to-grey-2 rounded-[33px]'>
-      <h3 className='text-base text-grey-8 mb-[25px]'>{props.question.question}</h3>
-      {props.question.answers.map(answer => (<Radio name={props.question.key} label={answer}/>))}
+    <div className=' relative shadow-box dark:shadow-light-box transition-shadow duration-700 mb-10 p-[36px] rounded-[33px]'>
+      <div className=' trans-dark -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-br from-grey-3 to-grey-2 rounded-[33px]'></div>
+      <div className=' trans-light -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-br from-light-box-1 to-light-box-2 rounded-[33px]'></div>
+      <h3 className='text-base text-grey-8 mb-[25px] trans-text dark:text-font-blue'>{props.question.question}</h3>
+      {props.question.answers.map(answer => (<Radio label={answer.label} checked={answer.checked}/>))}
     </div>
   );
 };

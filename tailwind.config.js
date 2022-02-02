@@ -1,5 +1,6 @@
 module.exports = {
   content: ['./src/**/*.{html,js,jsx}', './public/index.html'],
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '640px',
@@ -11,6 +12,7 @@ module.exports = {
     colors: {
       'white': '#ffffff',
       'white-003': 'rgba(255, 255, 255, 0.02)',
+      'white-008': 'rgba(255, 255, 255, 0.08)',
       'black-02': 'rgba(0, 0, 0, 0.2)',
       'black-003': 'rgba(0, 0, 0, 0.03)',
       'grey-1': '#0F0F0F',
@@ -23,6 +25,15 @@ module.exports = {
       'grey-8': '#DCDCDC',
       'blue-1': '#47E9FF',
       'blue-2': '#BCF7FF',
+
+      'light-bg-1': '#F8F8F8',
+      'light-bg-2': '#88A7AB',
+      'light-box-1': '#FFFFFF',
+      'light-box-2': '#CCDADC',
+      'font-blue': '#6C8F94',
+      'font-light-blue': '#8FAAAD',
+      'blue-006': 'rgba(50, 95, 101, 0.06)',
+      'blue-028': 'rgba(32, 86, 94, 0.28)',
     },
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],
@@ -37,6 +48,7 @@ module.exports = {
     boxShadow: {
       header: '0 -3px 39px rgba(0, 0, 0, 0.65)',
       box: '15px 14px 28px -3px rgba(0, 0, 0, 0.65)',
+      'light-box': '15px 14px 28px -3px rgba(0, 0, 0, 0.2)',
     },
     container: {
       padding: {
@@ -54,6 +66,10 @@ module.exports = {
       },
       transitionProperty: {
         text: 'color',
+        w: 'width',
+        opacity: 'opacity',
+        bg: 'background-color',
+        wbg: 'width background-color'
       }
     },
   },

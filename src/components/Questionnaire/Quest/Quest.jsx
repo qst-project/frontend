@@ -1,49 +1,28 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import BtnSubmit from '../../UI/BtnSubmit/BtnSubmit';
 import QuestCheckbox from '../QuestCheckbox/QuestCheckbox';
 import QuestRadio from '../QuestRadio/QuestRadio';
 
-let questions = [
-  {
-    type: 'radio',
-    key: '1',
-    question: 'How did you find out about the vacancy of our Company?',
-    answers: [
-      'Company website',
-      'HeadHunter',
-      'From friends',
-      'Other'
-    ]
-  },
-
-  {
-    type: 'checkbox',
-    key: '2',
-    question: 'What did you like our company?',
-    answers: [
-      'Salary',
-      'Working conditions',
-      'Opportunity for career growth'
-    ]
-  },
-]
-
 const Quest = () => {
+  const dispatch = useDispatch();
+  const questions = useSelector(state => state.questions);
+
   return (
     <div className='w-full'>
-      <h2 className='text-lg text-white uppercase tracking-[18px] text-center mt-[100px]'>My survey</h2>
-      <div className='mt-[100px]'>
+      <h2 style={{textShadow: '6px 5px 10px rgba(0, 0, 0, 0.27)'}} className='text-lg text-white uppercase tracking-[18px] text-center mt-24'>My survey</h2>
+      <div className=' mt-24'>
         {questions.map(question => {
           switch (question.type) {
             case 'radio':
-              return <QuestRadio question={question}/>
+              return <QuestRadio question={question} key={question.id}/>
             case 'checkbox':
-              return <QuestCheckbox question={question}/>
+              return <QuestCheckbox question={question} key={question.id}/>
           }
         })}
       </div>
         
-      <BtnSubmit>Submit</BtnSubmit>
+      {/* <BtnSubmit>Submit</BtnSubmit> */}
     </div>
   );
 };
