@@ -1,0 +1,2 @@
+export const SELECT_CHECKBOX = 'SELECT_CHECKBOX';
+export const SELECT_RADIO = 'SELECT_RADIO';

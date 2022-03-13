@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Radio = (props) => {
+const Radio = ({label, selectRadio, questionID, answerID, checked}) => {
 
   return (
-    <button value={props.label} className='trans-bg bg-white-003 dark:bg-blue-006 mt-2 block py-[10px] pl-4 pr-[30px] rounded-full cursor-pointer'>
-      <div className='trans-bg w-[10px] h-[10px] mr-4 inline-block bg-black-02 dark:bg-font-blue rounded-full'></div>
-      <span className='transition-text text-grey-6 dark:text-font-light-blue hover:text-grey-7 dark:hover:text-font-blue'>{props.label}</span>
+    <button onClick={() => selectRadio(questionID, answerID)} value={label} className='group trans-bg bg-blue-006 dark:bg-white-003 mt-2 block py-[10px] pl-4 pr-[30px] rounded-full cursor-pointer'>
+      {checked ? 
+      (<div className='transition-bg duration-300 bg-blue-1 dark:bg-blue-1 shadow-shine w-[10px] h-[10px] mr-4 inline-block rounded-full'></div>) : 
+      (<div className='transition-bg duration-300 bg-light-text-2 dark:bg-black-02 w-[10px] h-[10px] mr-4 inline-block  rounded-full'></div>)
+      }
+      <span className='transition-text text-light-text-2 dark:text-grey-6 group-hover:text-light-text-1 dark:group-hover:text-grey-7'>{label}</span>
     </button>
   );
 };

@@ -3,14 +3,14 @@ import React from 'react';
 const ThemeBtn = () => {
   let changeTheme = () => {
     let cls = document.querySelector('html').classList;
-    if (cls.contains('dark')) cls.remove('dark');
-    else cls.add('dark');
+    cls.toggle('dark');
   }
 
   return (
     <button onClick={changeTheme} className='group relative pl-4 ml-6 flex items-center'>
-      <div className='absolute right-0 bg-white-008 transition-wbg dark:bg-blue-028 rounded-full w-[30px] h-[30px] duration-300 group-hover:w-full'></div>
-      <p className='text-grey-8 trans-text dark:text-white z-10 mr-[36px]'>Theme</p>
+      <div className='absolute right-0  transition-wbg bg-blue-028 dark:bg-white-008 rounded-full 
+      w-[30px] h-[30px] duration-300 group-hover:w-full'></div>
+      <p className='trans-text text-white dark:text-grey-8 z-10 mr-[36px]'>Theme</p>
       <svg className='absolute trans-dark z-10 right-[5px]' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8.38812 2.16566C8.67065 2.10707 8.95319 2.06542 9.23181 2.03808C9.51825 2.01074 9.80209 1.99772 10.082 2.00033C10.2396 2.00163 10.3659 2.13051 10.3645 2.28803C10.3632 2.40909 10.2864 2.51194 10.1797 2.55229C8.98834 3.02094 8.03528 3.89446 7.45068 4.97626C6.8752 6.03984 6.65646 7.30389 6.91817 8.57966L6.91947 8.58878C7.21762 10.0286 8.06913 11.2119 9.20838 11.9618C10.3463 12.7116 11.7694 13.0266 13.2094 12.7324L13.2185 12.7311C14.2549 12.5163 15.1572 12.0164 15.8616 11.3278C16.5907 10.6157 17.1063 9.70312 17.3367 8.70334C17.3719 8.54972 17.5255 8.45469 17.6779 8.48984C17.7937 8.51718 17.8771 8.61091 17.8953 8.72156C18.239 10.8305 17.7195 12.8965 16.5855 14.5419C15.4567 16.1796 13.7172 17.402 11.6145 17.8342C9.45055 18.2794 7.31137 17.8056 5.60185 16.6808C3.89102 15.5521 2.61116 13.7752 2.16588 11.6116C1.73101 9.49874 2.17239 7.40934 3.24133 5.72089C4.31548 4.02724 6.02109 2.73455 8.10819 2.22814C8.14855 2.21773 8.19542 2.20731 8.2462 2.1956H8.2475L8.38812 2.16566Z" fill="#DCDCDC"/>
       </svg>
