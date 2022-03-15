@@ -658,6 +658,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 33px;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
 .bg-blue-028 {
   background-color: rgba(32, 86, 94, 0.28);
 }
@@ -767,7 +775,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-lg {
   font-size: 36px;
-  line-height: 1.75rem;
+  line-height: 3rem;
 }
 
 .text-base {
@@ -828,14 +836,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
-.transition-text {
-  transition-property: color;
+.transition-bg {
+  transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.transition-bg {
-  transition-property: background-color;
+.transition-text {
+  transition-property: color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }

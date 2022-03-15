@@ -1,6 +1,7 @@
 import { SELECT_CHECKBOX, SELECT_RADIO } from "../types";
 
 const initialState = {
+  title: 'My survey',
   questions: [
     {
       type: 'radio',
@@ -17,6 +18,17 @@ const initialState = {
     {
       type: 'checkbox',
       id: '1',
+      question: 'What did you like our company?',
+      answers: [
+        {label: 'Salary', checked: false},
+        {label: 'Working conditions', checked: false},
+        {label: 'Opportunity for career growth', checked: false},
+      ]
+    },
+      
+    {
+      type: 'checkbox',
+      id: '2',
       question: 'What did you like our company?',
       answers: [
         {label: 'Salary', checked: false},

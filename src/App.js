@@ -1,15 +1,18 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Router, Routes } from 'react-router-dom';
 import * as comp from './components';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <comp.Background/>
       <comp.Header/>
       <div className='container mx-auto'>
-        <comp.Quest/>
+        <Routes>
+          <Route path='/' element={<comp.Quest/>}/>
+          <Route path='*' element={<></>}/>
+        </Routes>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 

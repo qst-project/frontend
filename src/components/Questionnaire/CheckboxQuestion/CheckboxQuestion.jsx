@@ -1,7 +1,7 @@
 import React from 'react';
 import Checkbox from '../../UI/Checkbox/Checkbox';
 
-const QuestCheckbox = ({question, selectCheckbox, questionID}) => {
+const CheckboxQuestion = ({question, selectCheckbox, questionID}) => {
   return (
     <div className='relative shadow-light-box dark:shadow-box transition-shadow duration-700 mb-10 p-[36px] rounded-[33px]'>
       <div className='trans-light -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-br from-light-box-1 to-light-box-2 rounded-[33px]'></div>
@@ -12,4 +12,4 @@ const QuestCheckbox = ({question, selectCheckbox, questionID}) => {
   );
 };
 
-export default QuestCheckbox;
+export default CheckboxQuestion;

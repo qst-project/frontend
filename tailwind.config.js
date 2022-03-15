@@ -48,7 +48,7 @@ module.exports = {
       xs: ['14px', { lineHeight: '1rem' }],
       sm: ['18px', { lineHeight: '1.25rem' }],
       base: ['20px', { lineHeight: '1.5rem' }],
-      lg: ['36px', { lineHeight: '1.75rem' }],
+      lg: ['36px', { lineHeight: '3rem' }],
       // xl: ['1.25rem', { lineHeight: '1.75rem' }],
     },
     boxShadow: {
@@ -77,7 +77,7 @@ module.exports = {
         opacity: 'opacity',
         bg: 'background-color',
         wbg: 'width background-color'
-      }
+      },
     },
   },
   plugins: [],
