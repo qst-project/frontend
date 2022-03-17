@@ -1,0 +1,9 @@
+.b2  svg {
+  fill: rgba(0, 0, 0, 0);
+}
+
+.b1:hover + .b2 svg {
+  opacity: 1;
+  fill: #8FAAAD;
+  transition: 500ms;
+}

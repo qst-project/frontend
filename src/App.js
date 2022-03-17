@@ -9,6 +9,7 @@ function App() {
       <div className='container mx-auto'>
         <Routes>
           <Route path='/' element={<comp.Quest/>}/>
+          <Route path='/editor' element={<comp.Editor/>}/>
           <Route path='*' element={<></>}/>
         </Routes>
       </div>

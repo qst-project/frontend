@@ -18,4 +18,16 @@
   .trans-bg {
     @apply transition-bg duration-700;
   }
+
+  .my-light-gradient {
+    @apply transition-opacity duration-700 dark:opacity-0 -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-r from-light-box-1 to-light-box-2;
+  }
+
+  .my-dark-gradient {
+    @apply transition-opacity duration-700 opacity-0 dark:opacity-100 -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-r from-grey-3 to-grey-2;
+  }
+
+  .my-gradient-box {
+    @apply inline-block relative shadow-light-box dark:shadow-box transition-shadow duration-700;
+  }
 }

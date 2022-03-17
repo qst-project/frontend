@@ -505,6 +505,64 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 700ms;
 }
 
+.my-light-gradient {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #FFFFFF;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
+  --tw-gradient-to: #CCDADC;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-light-gradient {
+  opacity: 0;
+}
+
+.my-dark-gradient {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #404040;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(64 64 64 / 0));
+  --tw-gradient-to: #181818;
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-dark-gradient {
+  opacity: 1;
+}
+
+.my-gradient-box {
+  position: relative;
+  display: inline-block;
+  --tw-shadow: 15px 14px 28px -3px rgba(0, 0, 0, 0.2);
+  --tw-shadow-colored: 15px 14px 28px -3px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-gradient-box {
+  --tw-shadow: 15px 14px 28px -3px rgba(0, 0, 0, 0.65);
+  --tw-shadow-colored: 15px 14px 28px -3px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .fixed {
   position: fixed;
 }
@@ -529,20 +587,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 5.5px;
 }
 
-.top-0 {
-  top: 0px;
-}
-
-.left-0 {
-  left: 0px;
-}
-
 .-z-10 {
   z-index: -10;
 }
 
 .z-10 {
   z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .mx-auto {
@@ -574,12 +628,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 6rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
 
-.mb-\[25px\] {
-  margin-bottom: 25px;
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .mb-8 {
@@ -590,8 +648,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.5rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
+.mr-\[-50\%\] {
+  margin-right: -50%;
+}
+
+.mt-\[-72px\] {
+  margin-top: -72px;
+}
+
+.mt-\[18px\] {
+  margin-top: 18px;
 }
 
 .block {
@@ -606,6 +672,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -618,8 +688,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 30px;
 }
 
+.h-9 {
+  height: 2.25rem;
+}
+
 .h-\[10px\] {
   height: 10px;
+}
+
+.h-\[72px\] {
+  height: 72px;
 }
 
 .w-full {
@@ -630,8 +708,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 30px;
 }
 
+.w-9 {
+  width: 2.25rem;
+}
+
 .w-\[10px\] {
   width: 10px;
+}
+
+.w-\[72px\] {
+  width: 72px;
+}
+
+.w-\[252px\] {
+  width: 252px;
 }
 
 .cursor-pointer {
@@ -650,8 +740,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.overflow-visible {
+  overflow: visible;
+}
+
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 
 .rounded-\[33px\] {
@@ -686,10 +792,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .from-light-bg-1 {
@@ -728,12 +830,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-to: #CCDADC;
 }
 
+.fill-light-text-2 {
+  fill: #8FAAAD;
+}
+
 .object-left-bottom {
   object-position: left bottom;
 }
 
-.p-\[36px\] {
-  padding: 36px;
+.p-4 {
+  padding: 1rem;
+}
+
+.p-9 {
+  padding: 2.25rem;
 }
 
 .py-3 {
@@ -806,6 +916,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(143 170 173 / var(--tw-text-opacity));
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 .shadow-header {
   --tw-shadow: 0 -3px 39px rgba(0, 0, 0, 0.65);
   --tw-shadow-colored: 0 -3px 39px var(--tw-shadow-color);
@@ -830,12 +944,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
-.transition-shadow {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-bg {
   transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -848,21 +956,75 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
+.transition-w {
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
 }
 
-.duration-700 {
-  transition-duration: 700ms;
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.hover\:w-80:hover {
+  width: 20rem;
+}
+
+.hover\:w-64:hover {
+  width: 16rem;
+}
+
+.hover\:w-\[252px\]:hover {
+  width: 252px;
+}
+
+.group:hover .group-hover\:inline-block {
+  display: inline-block;
 }
 
 .group:hover .group-hover\:w-full {
   width: 100%;
 }
 
+.group:hover .group-hover\:fill-black-003 {
+  fill: rgba(0, 0, 0, 0.03);
+}
+
 .group:hover .group-hover\:text-light-text-1 {
   --tw-text-opacity: 1;
   color: rgb(108 143 148 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
 }
 
 .dark .dark\:bg-white-008 {
@@ -895,12 +1057,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:text-grey-6 {
   --tw-text-opacity: 1;
   color: rgb(156 156 156 / var(--tw-text-opacity));
-}
-
-.dark .dark\:shadow-box {
-  --tw-shadow: 15px 14px 28px -3px rgba(0, 0, 0, 0.65);
-  --tw-shadow-colored: 15px 14px 28px -3px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .dark .group:hover .dark\:group-hover\:text-grey-7 {
