@@ -5,7 +5,7 @@ const initialState = {
   questions: [
     {
       type: 'radio',
-      id: '0',
+      id: 0,
       question: 'How did you find out about the vacancy of our Company?',
       answers: [
         {label: 'Company website', checked: false},
@@ -17,7 +17,7 @@ const initialState = {
   
     {
       type: 'checkbox',
-      id: '1',
+      id: 1,
       question: 'What did you like our company?',
       answers: [
         {label: 'Salary', checked: false},
@@ -28,7 +28,7 @@ const initialState = {
       
     {
       type: 'checkbox',
-      id: '2',
+      id: 2,
       question: 'What did you like our company?',
       answers: [
         {label: 'Salary', checked: false},

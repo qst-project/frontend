@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const Radio = ({label, selectRadio, questionID, answerID, checked}) => {
 
@@ -12,5 +13,13 @@ const Radio = ({label, selectRadio, questionID, answerID, checked}) => {
     </button>
   );
 };
+
+Radio.propTypes = {
+  label: propTypes.string,
+  selectRadio: propTypes.func,
+  questionID: propTypes.number,
+  answerID: propTypes.number,
+  checked: propTypes.bool
+}
 
 export default Radio;

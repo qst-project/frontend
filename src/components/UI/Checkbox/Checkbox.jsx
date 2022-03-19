@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const Checkbox = ({label, selectCheckbox, questionID, answerID, checked}) => {
   
@@ -12,5 +13,13 @@ const Checkbox = ({label, selectCheckbox, questionID, answerID, checked}) => {
     </button>
   );
 };
+
+Checkbox.propTypes = {
+  label: propTypes.string,
+  selectCheckbox: propTypes.func,
+  questionID: propTypes.number,
+  answerID: propTypes.number,
+  checked: propTypes.bool
+}
 
 export default Checkbox;

@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 const BtnSubmit = ({children, onClick}) => {
   return (
@@ -7,5 +8,10 @@ const BtnSubmit = ({children, onClick}) => {
     </button>
   );
 };
+
+BtnSubmit.propTypes = {
+  children: propTypes.string,
+  onClick: propTypes.func
+}
 
 export default BtnSubmit;
