@@ -1,0 +1,38 @@
+syntax = "proto3";
+option go_package = "../../pkg/api";
+
+package api;
+
+service Questionnaire {
+  rpc Test(TestRequest) returns (TestResponse) {};
+  rpc GetSurvey(SurveyRequest) returns (SurveyResponse) {};
+}
+
+message TestRequest {
+  string request = 1;
+}
+
+message  TestResponse {
+  string result = 1;
+}
+
+message Survey {
+  string Id = 1;
+  string Title = 2;
+  repeated Question Questions = 3;
+
+  message Question {
+    string Id = 1;
+    string Text = 2;
+    string Order = 3;
+    string Kind = 4;
+  }
+}
+
+message SurveyRequest {
+  string ref = 1;
+}
+
+message SurveyResponse {
+  Survey survey = 1;
+}

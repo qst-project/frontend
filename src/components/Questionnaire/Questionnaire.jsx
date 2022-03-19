@@ -5,6 +5,19 @@ import BtnSubmit from '../UI/BtnSubmit/BtnSubmit';
 import CheckboxQuestion from './CheckboxQuestion/CheckboxQuestion';
 import RadioQuestion from './RadioQuestion/RadioQuestion';
 
+import { QuestionnaireClient } from '../../proto/questionnaire_grpc_web_pb';
+import {SurveyRequest} from "../../proto/questionnaire_pb"
+
+// const client = new QuestionnaireClient(
+//   "http://localhost:8081",
+//   null,
+//   null
+// )
+
+
+const client = new QuestionnaireClient("https://localhost:8081", null, null)
+
+
 const Questionnaire = () => {
   const state = useSelector((state) => state.questionnaire);
   const {questions, title} = state;
@@ -16,6 +29,16 @@ const Questionnaire = () => {
 
   const selectRadio = (questionID, answerID) => {
     dispatch(selectRadioAC(questionID, answerID))
+  }
+
+  const handler = () => {
+    const request = new SurveyRequest();
+    request.setRef("gfjjgf");
+    client.getSurvey(request, null, (err, response) => {
+      console.log(err);
+      console.log(response)
+    })
+    console.log(request)
   }
 
   return (
@@ -30,6 +53,10 @@ const Questionnaire = () => {
               return <CheckboxQuestion selectCheckbox={selectCheckbox} question={question} questionID={question.id} key={question.id}/>
           }
         })}
+      </div>
+
+      <div>
+        <button onClick={handler}>Click</button>
       </div>
         
       <BtnSubmit>Submit</BtnSubmit>
