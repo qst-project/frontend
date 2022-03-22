@@ -5,7 +5,7 @@ import {ReactComponent as CheckboxIcon} from '../../../icons/checkbox.svg';
 import {ReactComponent as TextIcon} from '../../../icons/text.svg';
 import HelpBox from '../HelpBox/HelpBox';
 
-const AddQuestionBtn = () => {
+const AddQuestionBtn = ({addQuestion}) => {
   const btnBg = useRef();
   const btn = useRef();
   const plus = useRef();
@@ -21,15 +21,17 @@ const AddQuestionBtn = () => {
       icon.onmouseenter = e => showHelp(e);
       icon.onmouseleave = e => closeHelp(e);
     }
-  }, []);
+  });
 
   const unwrapBtn = () => {
     clearTimeout(wrapTimeOut);
     plus.current.style.opacity = '0'
     plus.current.style.visibility = 'hidden';
     btn.current.style.display = 'flex';
+    console.log(icons);
     for (let icon of icons) {
-      setTimeout(() => icon.style.opacity = '1', 0);
+      console.log(icon.style.opacity);
+      setTimeout(() => icon.style.opacity = '1', 10);
     }
   }
 
@@ -58,26 +60,26 @@ const AddQuestionBtn = () => {
   }
 
   return (
-    <div>
-      <div onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='relative flex justify-center mx-auto my-gradient-box 
+    <div className='mb-48'>
+      <div onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='flex justify-center mx-auto my-gradient-box 
       w-[72px] h-[72px] rounded-3xl hover:w-[252px] cursor-pointer transition-w duration-500 group'>
         <div className='my-light-gradient rounded-3xl'></div>
         <div className='my-dark-gradient rounded-3xl'></div>
         <PlusIcon ref={plus} className='fill-light-text-2 w-9 h-9 mt-[18px] transition-opacity duration-500'/>
         <div ref={btn} className='hidden justify-around pt-[18px] overflow-visible absolute'>
-          <button className='relative ml-[18px] fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
+          <button onClick={() => addQuestion('text')} className='relative ml-[18px] fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
             <TextIcon className='w-9 h-9'/>
             <div className='absolute left-[-78px] top-14 invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
-              <HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox>
+              <HelpBox>Text (user can write a text answer to the question)</HelpBox>
             </div>
           </button>
-          <button className='relative fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
+          <button onClick={() => addQuestion('radio')} className='relative fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
             <RadioIcon className='w-9 h-9'/>
             <div className='absolute left-[-78px] top-14 invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
-              <HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox>
+              <HelpBox>Radio (user can only select one answer from those presented)</HelpBox>
             </div>
           </button>
-          <button className='relative mr-[18px] fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
+          <button onClick={() => addQuestion('checkbox')} className='relative mr-[18px] fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
             <CheckboxIcon className='w-9 h-9'/>
             <div className='absolute left-[-78px] top-14 invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
               <HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox>
@@ -85,11 +87,6 @@ const AddQuestionBtn = () => {
           </button>
         </div>
       </div>
-      {/* <div ref={helps} className='w-[336px] bg-blue-028 relative'>
-        <div className='absolute invisible'><HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox></div>
-        <div className='absolute left-[72px] invisible'><HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox></div>
-        <div className='absolute left-[144px] invisible'><HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox></div>
-      </div> */}
     </div>
   );
 };
