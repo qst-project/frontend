@@ -24,6 +24,7 @@ module.exports = {
       'light-box-2': '#CCDADC',
       'light-text-1': '#6C8F94',
       'light-text-2': '#8FAAAD',
+      'light-help-bg': 'rgba(255, 255, 255, 0.42)',
       'blue-006': 'rgba(50, 95, 101, 0.06)',
       'blue-028': 'rgba(32, 86, 94, 0.28)',
 
@@ -45,7 +46,7 @@ module.exports = {
       sans: ['Montserrat', 'sans-serif'],
     },
     fontSize: {
-      xs: ['14px', { lineHeight: '1rem' }],
+      xs: ['14px', { lineHeight: '1.25rem' }],
       sm: ['18px', { lineHeight: '1.25rem' }],
       base: ['20px', { lineHeight: '1.5rem' }],
       lg: ['36px', { lineHeight: '3rem' }],
