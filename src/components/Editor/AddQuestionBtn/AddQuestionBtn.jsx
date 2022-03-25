@@ -31,13 +31,13 @@ const AddQuestionBtn = ({addQuestion}) => {
     console.log(icons);
     for (let icon of icons) {
       console.log(icon.style.opacity);
-      setTimeout(() => icon.style.opacity = '1', 10);
+      setTimeout(() => icon.firstChild.style.opacity = '1', 10);
     }
   }
 
   const wrapBtn = () => {
     for (let icon of icons) {
-      icon.style.opacity = '0';
+      icon.firstChild.style.opacity = '0';
     }
     wrapTimeOut = setTimeout(() => {
       btn.current.style.display = 'none';
@@ -67,24 +67,36 @@ const AddQuestionBtn = ({addQuestion}) => {
         <div className='my-dark-gradient rounded-3xl'></div>
         <PlusIcon ref={plus} className='fill-light-text-2 w-9 h-9 mt-[18px] transition-opacity duration-500'/>
         <div ref={btn} className='hidden justify-around pt-[18px] overflow-visible absolute'>
-          <button onClick={() => addQuestion('text')} className='relative ml-[18px] fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
-            <TextIcon className='w-9 h-9'/>
-            <div className='absolute left-[-78px] top-14 invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
+
+
+
+          <div className='w-9 h-9 ml-[18px]'>
+            <button onClick={() => addQuestion('text')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
+              <TextIcon className='w-full h-full'/>
+            </button>
+            <div className='invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
               <HelpBox>Text (user can write a text answer to the question)</HelpBox>
             </div>
-          </button>
-          <button onClick={() => addQuestion('radio')} className='relative fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
-            <RadioIcon className='w-9 h-9'/>
-            <div className='absolute left-[-78px] top-14 invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
+          </div>
+
+          <div className='w-9 h-9'>
+            <button onClick={() => addQuestion('radio')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
+              <RadioIcon className='w-full h-full'/>
+            </button>
+            <div className='invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
               <HelpBox>Radio (user can only select one answer from those presented)</HelpBox>
             </div>
-          </button>
-          <button onClick={() => addQuestion('checkbox')} className='relative mr-[18px] fill-light-text-2 hover:fill-light-text-1 w-9 h-9 opacity-0 transition-opacity duration-500'>
-            <CheckboxIcon className='w-9 h-9'/>
-            <div className='absolute left-[-78px] top-14 invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
+          </div>
+
+          <div className='w-9 h-9 mr-[18px]'>
+            <button onClick={() => addQuestion('checkbox')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
+              <CheckboxIcon className='w-full h-full'/>
+            </button>
+            <div className='invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
               <HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox>
             </div>
-          </button>
+          </div>
+
         </div>
       </div>
     </div>

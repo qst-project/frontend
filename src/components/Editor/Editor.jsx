@@ -16,6 +16,7 @@ const Editor = () => {
   return (
     <div className='w-full flex flex-col items-center'>
       {questionnaire.questions.map((question, index) => (<EditCheckbox key={index}/>))}
+      <EditCheckbox/>
       <AddQuestionBtn addQuestion={addQuestion}></AddQuestionBtn>
     </div>
   );
