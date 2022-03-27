@@ -31,3 +31,14 @@
     @apply inline-block relative shadow-light-box dark:shadow-box transition-shadow duration-700;
   }
 }
+
+@layer utilities {
+  .tooltip-light {
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.1) !important;
+    padding: 12px 20px !important;
+    border-radius: 10px !important;
+    font-size: 14px !important;
+    color: #8FAAAD !important;
+    max-width: 200px !important;
+  }
+}

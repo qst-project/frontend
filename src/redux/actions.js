@@ -1,4 +1,4 @@
-import { ADD_QUESTION, SELECT_CHECKBOX, SELECT_RADIO } from "./types"
+import { ADD_ANSWER, ADD_QUESTION, SELECT_CHECKBOX, SELECT_RADIO } from "./types"
 
 export const selectCheckboxAC = (questionID, answerID) => {
   return {
@@ -20,5 +20,12 @@ export const addQuestionAC = (kind) => {
   return {
     type: ADD_QUESTION,
     kind
+  }
+}
+
+export const addAnswerAC = (questionID) => {
+  return {
+    type: ADD_ANSWER,
+    questionID
   }
 }

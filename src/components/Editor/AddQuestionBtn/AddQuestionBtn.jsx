@@ -3,24 +3,18 @@ import {ReactComponent as PlusIcon} from '../../../icons/plus.svg';
 import {ReactComponent as RadioIcon} from '../../../icons/radio.svg';
 import {ReactComponent as CheckboxIcon} from '../../../icons/checkbox.svg';
 import {ReactComponent as TextIcon} from '../../../icons/text.svg';
-import HelpBox from '../HelpBox/HelpBox';
 
 const AddQuestionBtn = ({addQuestion}) => {
   const btnBg = useRef();
   const btn = useRef();
   const plus = useRef();
   let wrapTimeOut;
-  let helpTiomeOut;
   let icons = [];
 
   useEffect(() => {
     btn.current.style.height = '72px';
     btn.current.style.width = '252px';
     icons = btn.current.children;
-    for (let icon of icons) {
-      icon.onmouseenter = e => showHelp(e);
-      icon.onmouseleave = e => closeHelp(e);
-    }
   });
 
   const unwrapBtn = () => {
@@ -28,9 +22,7 @@ const AddQuestionBtn = ({addQuestion}) => {
     plus.current.style.opacity = '0'
     plus.current.style.visibility = 'hidden';
     btn.current.style.display = 'flex';
-    console.log(icons);
     for (let icon of icons) {
-      console.log(icon.style.opacity);
       setTimeout(() => icon.firstChild.style.opacity = '1', 10);
     }
   }
@@ -46,19 +38,6 @@ const AddQuestionBtn = ({addQuestion}) => {
     }, 200);
   }
 
-  const showHelp = (e) => {
-    helpTiomeOut = setTimeout(() => {
-      e.target.lastChild.style.visibility = 'visible';
-      e.target.lastChild.style.opacity = '1';
-    }, 300)
-  }
-
-  const closeHelp = (e) => {
-    clearTimeout(helpTiomeOut);
-    e.target.lastChild.style.visibility = 'hidden';
-    e.target.lastChild.style.opacity = '0';
-  }
-
   return (
     <div className='mb-48'>
       <div onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='flex justify-center mx-auto my-gradient-box 
@@ -71,30 +50,21 @@ const AddQuestionBtn = ({addQuestion}) => {
 
 
           <div className='w-9 h-9 ml-[18px]'>
-            <button onClick={() => addQuestion('text')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
+            <button data-tip='Text (user can write a text answer to the question)' data-for='add-question-tip' onClick={() => addQuestion('text')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
               <TextIcon className='w-full h-full'/>
             </button>
-            <div className='invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
-              <HelpBox>Text (user can write a text answer to the question)</HelpBox>
-            </div>
           </div>
 
           <div className='w-9 h-9'>
-            <button onClick={() => addQuestion('radio')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
+            <button data-tip='Radio (user can only select one answer from those presented)' data-for='add-question-tip' onClick={() => addQuestion('radio')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
               <RadioIcon className='w-full h-full'/>
             </button>
-            <div className='invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
-              <HelpBox>Radio (user can only select one answer from those presented)</HelpBox>
-            </div>
           </div>
 
           <div className='w-9 h-9 mr-[18px]'>
-            <button onClick={() => addQuestion('checkbox')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
+            <button data-tip='Checkbox (user can select multiple answers from those presented)' data-for='add-question-tip' onClick={() => addQuestion('checkbox')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
               <CheckboxIcon className='w-full h-full'/>
             </button>
-            <div className='invisible opacity-0 transition-opacity duration-500 pointer-events-none'>
-              <HelpBox>Checkbox (user can select multiple answers from those presented)</HelpBox>
-            </div>
           </div>
 
         </div>

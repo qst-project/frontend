@@ -1,9 +1,16 @@
-import { ADD_QUESTION } from "../types";
+import { ADD_ANSWER, ADD_QUESTION } from "../types";
 
 const initialState = {
   questionnaire: {
     title: 'My survey',
-    questions: []
+    questions: [
+      {
+        type: 'checkbox',
+        id: 0,
+        question: '',
+        answers: []
+      },
+    ]
   }
 }
 
@@ -32,6 +39,14 @@ export const editorReducer = (state = initialState, action) => {
       }
       question.id = state.questionnaire.questions.length;
       newQuestions.push(question);
+      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
+    }
+
+    case ADD_ANSWER: {
+      const newQuestions = [...state.questionnaire.questions];
+      newQuestions[action.questionID].answers.push({
+        label: ''
+      });
       return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
     }
     default: return state;
