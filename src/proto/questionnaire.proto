@@ -1,11 +1,13 @@
 syntax = "proto3";
-option go_package = "../../pkg/api";
 
 package api;
 
 service Questionnaire {
   rpc Test(TestRequest) returns (TestResponse) {};
-  rpc GetSurvey(SurveyRequest) returns (SurveyResponse) {};
+  rpc GetSurvey(GetSurveyRequest) returns (GetSurveyResponse) {};
+  rpc CreateSurvey(CreateSurveyRequest) returns (CreateSurveyResponse) {};
+  rpc UpdateSurvey(UpdateSurveyRequest) returns (UpdateSurveyResponse) {};
+  rpc DeleteSurvey(DeleteSurveyRequest) returns (DeleteSurveyResponse) {};
 }
 
 message TestRequest {
@@ -19,20 +21,91 @@ message  TestResponse {
 message Survey {
   string Id = 1;
   string Title = 2;
-  repeated Question Questions = 3;
-
-  message Question {
-    string Id = 1;
-    string Text = 2;
-    string Order = 3;
-    string Kind = 4;
-  }
+  string Ref = 3;
+  repeated Question Questions = 4;
+  repeated RadioPossibleAnswer RadioPossibleAnswers = 5;
+  repeated CheckboxPossibleAnswer CheckboxPossibleAnswers = 6;
+  repeated TextPossibleAnswer TextPossibleAnswers = 7;
 }
 
-message SurveyRequest {
+message Question {
+    string Id = 1;
+    string QuestionnaireId = 2;
+    string Text = 3;
+    string Order = 4;
+    string Kind = 5;
+  }
+
+  message RadioPossibleAnswer {
+    string Id = 1;
+    string Text = 2;
+    string QuestionId = 3;
+  }
+
+  message CheckboxPossibleAnswer {
+    string Id = 1;
+    string Text = 2;
+    string QuestionId = 3;
+  }
+
+  message TextPossibleAnswer {
+    string Id = 1;
+    string Text = 2;
+    string QuestionId = 3;
+    string Placeholder = 4;
+  }
+
+  message RadioAnswer {
+    string Id = 1;
+    string QuestionnaireId = 2;
+    string QuestionId = 3;
+    string RadioPossibleAnswer = 4;
+  }
+
+  message CheckboxAnswer {
+    string Id = 1;
+    string QuestionnaireId = 2;
+    string QuestionId = 3;
+    string CheckboxPossibleAnswer = 4;
+  }
+
+  message TextAnswer {
+    string Id = 1;
+    string Answer = 2;
+    string QuestionnaireId = 3;
+    string QuestionId = 4;
+    string TextPossibleAnswer = 5;
+  }
+
+message GetSurveyRequest {
   string ref = 1;
 }
 
-message SurveyResponse {
+message GetSurveyResponse {
   Survey survey = 1;
+}
+
+message CreateSurveyRequest {
+  Survey survey = 1;
+}
+
+message CreateSurveyResponse {
+  bool result = 1;
+  string ref = 2;
+}
+
+message UpdateSurveyRequest {
+  Survey survey = 1;
+}
+
+message UpdateSurveyResponse {
+  bool result = 1;
+}
+
+message DeleteSurveyRequest {
+  string ref = 1;
+}
+
+message DeleteSurveyResponse {
+  bool result = 1;
 }

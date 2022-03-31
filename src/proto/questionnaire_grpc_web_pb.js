@@ -5,6 +5,8 @@
  */
 
 // GENERATED CODE -- DO NOT EDIT!
+
+
 /* eslint-disable */
 // @ts-nocheck
 
@@ -132,33 +134,33 @@ proto.api.QuestionnairePromiseClient.prototype.test =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.api.SurveyRequest,
- *   !proto.api.SurveyResponse>}
+ *   !proto.api.GetSurveyRequest,
+ *   !proto.api.GetSurveyResponse>}
  */
 const methodDescriptor_Questionnaire_GetSurvey = new grpc.web.MethodDescriptor(
   '/api.Questionnaire/GetSurvey',
   grpc.web.MethodType.UNARY,
-  proto.api.SurveyRequest,
-  proto.api.SurveyResponse,
+  proto.api.GetSurveyRequest,
+  proto.api.GetSurveyResponse,
   /**
-   * @param {!proto.api.SurveyRequest} request
+   * @param {!proto.api.GetSurveyRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.api.SurveyResponse.deserializeBinary
+  proto.api.GetSurveyResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.api.SurveyRequest} request The
+ * @param {!proto.api.GetSurveyRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.api.SurveyResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.api.GetSurveyResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.api.SurveyResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.api.GetSurveyResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.api.QuestionnaireClient.prototype.getSurvey =
@@ -173,11 +175,11 @@ proto.api.QuestionnaireClient.prototype.getSurvey =
 
 
 /**
- * @param {!proto.api.SurveyRequest} request The
+ * @param {!proto.api.GetSurveyRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.api.SurveyResponse>}
+ * @return {!Promise<!proto.api.GetSurveyResponse>}
  *     Promise that resolves to the response
  */
 proto.api.QuestionnairePromiseClient.prototype.getSurvey =
@@ -187,6 +189,189 @@ proto.api.QuestionnairePromiseClient.prototype.getSurvey =
       request,
       metadata || {},
       methodDescriptor_Questionnaire_GetSurvey);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.api.CreateSurveyRequest,
+ *   !proto.api.CreateSurveyResponse>}
+ */
+const methodDescriptor_Questionnaire_CreateSurvey = new grpc.web.MethodDescriptor(
+  '/api.Questionnaire/CreateSurvey',
+  grpc.web.MethodType.UNARY,
+  proto.api.CreateSurveyRequest,
+  proto.api.CreateSurveyResponse,
+  /**
+   * @param {!proto.api.CreateSurveyRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.api.CreateSurveyResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.api.CreateSurveyRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.api.CreateSurveyResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.api.CreateSurveyResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.api.QuestionnaireClient.prototype.createSurvey =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/api.Questionnaire/CreateSurvey',
+      request,
+      metadata || {},
+      methodDescriptor_Questionnaire_CreateSurvey,
+      callback);
+};
+
+
+/**
+ * @param {!proto.api.CreateSurveyRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.api.CreateSurveyResponse>}
+ *     Promise that resolves to the response
+ */
+proto.api.QuestionnairePromiseClient.prototype.createSurvey =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/api.Questionnaire/CreateSurvey',
+      request,
+      metadata || {},
+      methodDescriptor_Questionnaire_CreateSurvey);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.api.UpdateSurveyRequest,
+ *   !proto.api.UpdateSurveyResponse>}
+ */
+const methodDescriptor_Questionnaire_UpdateSurvey = new grpc.web.MethodDescriptor(
+  '/api.Questionnaire/UpdateSurvey',
+  grpc.web.MethodType.UNARY,
+  proto.api.UpdateSurveyRequest,
+  proto.api.UpdateSurveyResponse,
+  /**
+   * @param {!proto.api.UpdateSurveyRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.api.UpdateSurveyResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.api.UpdateSurveyRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.api.UpdateSurveyResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.api.UpdateSurveyResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.api.QuestionnaireClient.prototype.updateSurvey =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/api.Questionnaire/UpdateSurvey',
+      request,
+      metadata || {},
+      methodDescriptor_Questionnaire_UpdateSurvey,
+      callback);
+};
+
+
+/**
+ * @param {!proto.api.UpdateSurveyRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.api.UpdateSurveyResponse>}
+ *     Promise that resolves to the response
+ */
+proto.api.QuestionnairePromiseClient.prototype.updateSurvey =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/api.Questionnaire/UpdateSurvey',
+      request,
+      metadata || {},
+      methodDescriptor_Questionnaire_UpdateSurvey);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.api.DeleteSurveyRequest,
+ *   !proto.api.DeleteSurveyResponse>}
+ */
+const methodDescriptor_Questionnaire_DeleteSurvey = new grpc.web.MethodDescriptor(
+  '/api.Questionnaire/DeleteSurvey',
+  grpc.web.MethodType.UNARY,
+  proto.api.DeleteSurveyRequest,
+  proto.api.DeleteSurveyResponse,
+  /**
+   * @param {!proto.api.DeleteSurveyRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.api.DeleteSurveyResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.api.DeleteSurveyRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.api.DeleteSurveyResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.api.DeleteSurveyResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.api.QuestionnaireClient.prototype.deleteSurvey =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/api.Questionnaire/DeleteSurvey',
+      request,
+      metadata || {},
+      methodDescriptor_Questionnaire_DeleteSurvey,
+      callback);
+};
+
+
+/**
+ * @param {!proto.api.DeleteSurveyRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.api.DeleteSurveyResponse>}
+ *     Promise that resolves to the response
+ */
+proto.api.QuestionnairePromiseClient.prototype.deleteSurvey =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/api.Questionnaire/DeleteSurvey',
+      request,
+      metadata || {},
+      methodDescriptor_Questionnaire_DeleteSurvey);
 };
 
 

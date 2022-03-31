@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### `protoc -I=. src/proto/questionnaire.proto --js_out=import_style=commonjs,binary:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.` Update proto file
+
+### `docker run -d --name grpc-web-react -p 8080:8080 -p 9090:9090 grpc-web-react` run envoy docker container
+
+### `docker build -t grpc-web-react .` Build docker image for envoys. Run this command in the root
