@@ -9,12 +9,10 @@ const AddQuestionBtn = ({addQuestion}) => {
   const btn = useRef();
   const plus = useRef();
   let wrapTimeOut;
-  let icons = [];
 
   useEffect(() => {
     btn.current.style.height = '72px';
     btn.current.style.width = '252px';
-    icons = btn.current.children;
   });
 
   const unwrapBtn = () => {
@@ -22,13 +20,13 @@ const AddQuestionBtn = ({addQuestion}) => {
     plus.current.style.opacity = '0'
     plus.current.style.visibility = 'hidden';
     btn.current.style.display = 'flex';
-    for (let icon of icons) {
+    for (let icon of btn.current.children) {
       setTimeout(() => icon.firstChild.style.opacity = '1', 10);
     }
   }
 
   const wrapBtn = () => {
-    for (let icon of icons) {
+    for (let icon of btn.current.children) {
       icon.firstChild.style.opacity = '0';
     }
     wrapTimeOut = setTimeout(() => {
@@ -39,7 +37,7 @@ const AddQuestionBtn = ({addQuestion}) => {
   }
 
   return (
-    <div className='mb-48'>
+    <div>
       <div onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='flex justify-center mx-auto my-gradient-box 
       w-[72px] h-[72px] rounded-3xl hover:w-[252px] cursor-pointer transition-w duration-500 group'>
         <div className='my-light-gradient rounded-3xl'></div>

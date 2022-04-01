@@ -632,10 +632,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 6rem;
 }
 
-.mb-48 {
-  margin-bottom: 12rem;
-}
-
 .mt-\[18px\] {
   margin-top: 18px;
 }
@@ -654,6 +650,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .mb-8 {
@@ -776,6 +776,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0.5rem;
 }
 
+.basis-full {
+  flex-basis: 100%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -806,6 +810,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-around {
   justify-content: space-around;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .overflow-visible {
