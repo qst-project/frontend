@@ -836,6 +836,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.75rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -922,6 +926,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.5rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -998,7 +1006,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-sm {
   font-size: 18px;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
 }
 
 .uppercase {
@@ -1141,6 +1149,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .dark .dark\:bg-black-02 {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dark .dark\:bg-blue-2 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(188 247 255 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-grey-8 {

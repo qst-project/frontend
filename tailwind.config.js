@@ -39,7 +39,6 @@ module.exports = {
       'grey-8': '#DCDCDC',
       'blue-1': '#47E9FF',
       'blue-2': '#BCF7FF',
-
       
     },
     fontFamily: {
@@ -47,7 +46,7 @@ module.exports = {
     },
     fontSize: {
       xs: ['14px', { lineHeight: '1.25rem' }],
-      sm: ['18px', { lineHeight: '1.25rem' }],
+      sm: ['18px', { lineHeight: '1.5rem' }],
       base: ['20px', { lineHeight: '1.5rem' }],
       lg: ['36px', { lineHeight: '3rem' }],
       // xl: ['1.25rem', { lineHeight: '1.75rem' }],

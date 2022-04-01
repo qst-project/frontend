@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addAnswerAC, addQuestionAC, changeQuestionsOrderAC, removeAnswerAC, removeQuestionAC, setAnswerAC, setQuestionAC } from '../../redux/actions';
 import AddQuestionBtn from './AddQuestionBtn/AddQuestionBtn';
 import EditSelectQuestion from './EditSelectQuestion/EditSelectQuestion';
+import EditTextQuestion from './EditTextQuestion/EditTextQuestion';
 
 const Editor = () => {
   const state = useSelector(state => state.editor);
@@ -76,13 +77,17 @@ const Editor = () => {
                             setAnswer={setAnswer} 
                             removeQuestion={removeQuestion} 
                             removeAnswer={removeAnswer}/>
-                          </div>
-                        )
+                          </div>)
+                      case 'text':
+                        return (
+                          <div className='w-full' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                            <EditTextQuestion 
+                            question={question} 
+                            setQuestion={setQuestion} 
+                            removeQuestion={removeQuestion} />
+                          </div>)
                     }
-                  }
-                  
-
-                  }
+                  }}
                 </Draggable>
               ))} 
               {provided.placeholder}

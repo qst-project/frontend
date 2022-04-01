@@ -5,13 +5,29 @@ const initialState = {
     title: 'My survey',
     questions: [
       // {
+      //   type: 'radio',
+      //   id: 0,
+      //   question: '',
+      //   answers: [
+      //     {label: ''}
+      //   ]
+      // }
+
+      // {
       //   type: 'checkbox',
       //   id: 0,
       //   question: '',
       //   answers: [
       //     {label: ''}
       //   ]
-      // },
+      // }
+
+      // {
+      //   type: 'text',
+      //   id: 0,
+      //   question: '',
+      //   answer: ''
+      // }
     ]
   }
 }
@@ -35,6 +51,13 @@ export const editorReducer = (state = initialState, action) => {
             type: action.kind,
             question: '',
             answers: []
+          };
+          break;
+        }
+        case 'text': {
+          question = {
+            type: action.kind,
+            question: ''
           };
           break;
         }

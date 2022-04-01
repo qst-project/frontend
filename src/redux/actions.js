@@ -1,4 +1,4 @@
-import { ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER, REMOVE_ANSWER, REMOVE_QUESTION, SELECT_CHECKBOX, SELECT_RADIO, SET_ANSWER, SET_QUESTION } from "./types"
+import { ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER, REMOVE_ANSWER, REMOVE_QUESTION, SELECT_CHECKBOX, SELECT_RADIO, SET_ANSWER, SET_QUESTION, SET_TEXT_ANSWER } from "./types"
 
 export const selectCheckboxAC = (questionID, answerID) => {
   return {
@@ -13,6 +13,14 @@ export const selectRadioAC = (questionID, answerID) => {
     type: SELECT_RADIO,
     questionID,
     answerID
+  }
+}
+
+export const setTextAnswerAC = (questionID, value) => {
+  return {
+    type: SET_TEXT_ANSWER,
+    questionID,
+    value
   }
 }
 

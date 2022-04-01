@@ -1,4 +1,4 @@
-import { SELECT_CHECKBOX, SELECT_RADIO } from "../types";
+import { SELECT_CHECKBOX, SELECT_RADIO, SET_TEXT_ANSWER } from "../types";
 
 const initialState = {
   title: 'My survey',
@@ -27,14 +27,10 @@ const initialState = {
     },
       
     {
-      type: 'checkbox',
+      type: 'text',
       id: 2,
-      question: 'What did you like our company?',
-      answers: [
-        {label: 'Salary', checked: false},
-        {label: 'Working conditions', checked: false},
-        {label: 'Opportunity for career growth', checked: false},
-      ]
+      question: 'Please, write something about you',
+      answer: ''
     },
   ]
 }
@@ -53,6 +49,11 @@ export const questReducer = (state = initialState, action) => {
       for (let answer of answers) answer.checked = false;
       answers[action.answerID].checked = !answers[action.answerID].checked;
       return {...state, questions: newQuestions}
+    }
+    case SET_TEXT_ANSWER: {
+      const newQuestions = [...state.questions];
+      newQuestions[action.questionID].answer = action.value;
+      return {...state, questions: newQuestions};
     }
     default: return state;
   }
