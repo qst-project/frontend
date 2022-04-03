@@ -844,11 +844,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.125rem;
 }
 
-.bg-blue-028 {
+.bg-light-headerbtn {
   background-color: rgba(32, 86, 94, 0.28);
 }
 
-.bg-blue-006 {
+.bg-light-highlight {
   background-color: rgba(50, 95, 101, 0.06);
 }
 

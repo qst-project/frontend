@@ -15,7 +15,7 @@ const TextQuestion = ({question, setTextAnswer}) => {
         value={question.answer} 
         onChange={(e) => setTextAnswer(question.id, e.target.value)} 
         placeholder="Your answer..." 
-        className='w-full rounded-2xl p-4 bg-blue-006 text-sm text-light-text-1 resize-none focus:outline focus:outline-1 focus:outline-light-text-1'/>
+        className='w-full rounded-2xl p-4 bg-light-highlight text-sm text-light-text-1 resize-none focus:outline focus:outline-1 focus:outline-light-text-1'/>
     </div>
   );
 };

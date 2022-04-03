@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../../UI/Checkbox/Checkbox';
+import CheckboxAnswer from './CheckboxAnswer/CheckboxAnswer';
 import propTypes from 'prop-types';
 
 const CheckboxQuestion = ({question, selectCheckbox, questionID}) => {
@@ -8,7 +8,7 @@ const CheckboxQuestion = ({question, selectCheckbox, questionID}) => {
       <div className='my-light-gradient rounded-[33px]'></div>
       <div className='my-dark-gradient rounded-[33px]'></div>
       <h3 className='text-base mb-6 trans-text text-light-text-1 dark:text-grey-8'>{question.question} <span className='trans-text text-light-text-2 dark:text-grey-4'>(several variants)</span></h3>
-      {question.answers.map((answer, index) => (<Checkbox selectCheckbox={selectCheckbox} label={answer.label} checked={answer.checked} questionID={questionID} answerID={index} key={index}/>))}
+      {question.answers.map((answer, index) => (<CheckboxAnswer selectCheckbox={selectCheckbox} label={answer.label} checked={answer.checked} questionID={questionID} answerID={index} key={index}/>))}
     </div>
   );
 };

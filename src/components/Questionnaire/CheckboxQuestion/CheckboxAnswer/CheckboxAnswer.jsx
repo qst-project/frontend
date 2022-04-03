@@ -1,10 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-const Checkbox = ({label, selectCheckbox, questionID, answerID, checked}) => {
+const CheckboxAnswer = ({label, selectCheckbox, questionID, answerID, checked}) => {
   
   return (
-    <button onClick={() => selectCheckbox(questionID, answerID)} value={label} className='group trans-bg bg-blue-006 dark:bg-white-003 mt-2 block py-[10px] pl-4 pr-[30px] rounded-xl cursor-pointer'>
+    <button onClick={() => selectCheckbox(questionID, answerID)} value={label} className='group trans-bg bg-light-highlight dark:bg-white-003 mt-2 block py-[10px] pl-4 pr-[30px] rounded-xl cursor-pointer'>
       {checked ? 
       (<div className='transition-bg duration-300 bg-blue-1 dark:bg-blue-1 shadow-shine w-[10px] h-[10px] mr-4 inline-block rounded-sm'></div>) : 
       (<div className='transition-bg duration-300 bg-light-text-2 dark:bg-black-02 w-[10px] h-[10px] mr-4 inline-block  rounded-sm'></div>)
@@ -14,7 +14,7 @@ const Checkbox = ({label, selectCheckbox, questionID, answerID, checked}) => {
   );
 };
 
-Checkbox.propTypes = {
+CheckboxAnswer.propTypes = {
   label: propTypes.string,
   selectCheckbox: propTypes.func,
   questionID: propTypes.number,
@@ -22,4 +22,4 @@ Checkbox.propTypes = {
   checked: propTypes.bool
 }
 
-export default Checkbox;
+export default CheckboxAnswer;

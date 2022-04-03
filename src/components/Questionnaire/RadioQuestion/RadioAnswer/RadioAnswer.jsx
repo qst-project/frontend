@@ -1,10 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-const Radio = ({label, selectRadio, questionID, answerID, checked}) => {
+const RadioAnswer = ({label, selectRadio, questionID, answerID, checked}) => {
 
   return (
-    <button onClick={() => selectRadio(questionID, answerID)} value={label} className='group trans-bg bg-blue-006 dark:bg-white-003 mt-2 block py-[10px] pl-4 pr-[30px] rounded-full cursor-pointer'>
+    <button onClick={() => selectRadio(questionID, answerID)} value={label} className='group trans-bg bg-light-highlight dark:bg-white-003 mt-2 block py-[10px] pl-4 pr-[30px] rounded-full cursor-pointer'>
       {checked ? 
       (<div className='transition-bg duration-300 bg-blue-1 dark:bg-blue-2 shadow-shine w-[10px] h-[10px] mr-4 inline-block rounded-full'></div>) : 
       (<div className='transition-bg duration-300 bg-light-text-2 dark:bg-black-02 w-[10px] h-[10px] mr-4 inline-block  rounded-full'></div>)
@@ -14,7 +14,7 @@ const Radio = ({label, selectRadio, questionID, answerID, checked}) => {
   );
 };
 
-Radio.propTypes = {
+RadioAnswer.propTypes = {
   label: propTypes.string,
   selectRadio: propTypes.func,
   questionID: propTypes.number,
@@ -22,4 +22,4 @@ Radio.propTypes = {
   checked: propTypes.bool
 }
 
-export default Radio;
+export default RadioAnswer;

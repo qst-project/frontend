@@ -17,8 +17,8 @@ const EditSelectQuestion = ({question, addAnswer, setQuestion, setAnswer, remove
       {/* QUESTION LABEL */}
       <div className='mb-6 w-full flex'>
         <input type='text' placeholder='Your question...' value={question.question} onChange={(e) => setQuestion(question.id, e.target.value)}
-        className='px-4 h-10 basis-full bg-blue-006 rounded-xl text-base text-light-text-1 focus:outline focus:outline-1 focus:outline-light-text-1'></input>
-        <button onClick={() => removeQuestion(question.id)} data-tip='Remove question' data-for='global-tip' className='group p-2 bg-blue-006 rounded-xl ml-2'>
+        className='px-4 h-10 basis-full bg-light-highlight rounded-xl text-base text-light-text-1 focus:outline focus:outline-1 focus:outline-light-text-1'></input>
+        <button onClick={() => removeQuestion(question.id)} data-tip='Remove question' data-for='global-tip' className='group p-2 bg-light-highlight rounded-xl ml-2'>
           <RemoveIcon className='fill-light-text-2 group-hover:fill-light-text-1 w-6 h-6'/>
         </button>
       </div>
@@ -33,7 +33,7 @@ const EditSelectQuestion = ({question, addAnswer, setQuestion, setAnswer, remove
           answerID={index} 
           answer={answer}
           type={question.type}/>))}
-        <button onClick={() => addAnswer(question.id)} data-tip='Add new answer' data-for='global-tip' className='group p-2 bg-blue-006 rounded-xl'>
+        <button onClick={() => addAnswer(question.id)} data-tip='Add new answer' data-for='global-tip' className='group p-2 bg-light-highlight rounded-xl'>
           <PlusIcon className='fill-light-text-2 group-hover:fill-light-text-1 w-6 h-6'></PlusIcon>
         </button>
       </div>

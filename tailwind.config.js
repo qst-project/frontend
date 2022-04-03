@@ -16,7 +16,6 @@ module.exports = {
       'black-02': 'rgba(0, 0, 0, 0.2)',
       'black-003': 'rgba(0, 0, 0, 0.03)',
       
-
       // light theme
       'light-bg-1': '#F8F8F8',
       'light-bg-2': '#88A7AB',
@@ -25,8 +24,8 @@ module.exports = {
       'light-text-1': '#6C8F94',
       'light-text-2': '#8FAAAD',
       'light-help-bg': 'rgba(255, 255, 255, 0.42)',
-      'blue-006': 'rgba(50, 95, 101, 0.06)',
-      'blue-028': 'rgba(32, 86, 94, 0.28)',
+      'light-highlight': 'rgba(50, 95, 101, 0.06)',
+      'light-headerbtn': 'rgba(32, 86, 94, 0.28)',
 
       // dark theme
       'grey-1': '#0F0F0F',
