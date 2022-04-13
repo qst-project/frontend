@@ -4,30 +4,30 @@ const initialState = {
   questionnaire: {
     title: 'My survey',
     questions: [
-      // {
-      //   type: 'radio',
-      //   id: 0,
-      //   question: '',
-      //   answers: [
-      //     {label: ''}
-      //   ]
-      // }
+      {
+        type: 'radio',
+        id: 0,
+        question: '',
+        answers: [
+          {label: ''}
+        ]
+      },
 
-      // {
-      //   type: 'checkbox',
-      //   id: 0,
-      //   question: '',
-      //   answers: [
-      //     {label: ''}
-      //   ]
-      // }
+      {
+        type: 'checkbox',
+        id: 1,
+        question: '',
+        answers: [
+          {label: ''}
+        ]
+      },
 
-      // {
-      //   type: 'text',
-      //   id: 0,
-      //   question: '',
-      //   answer: ''
-      // }
+      {
+        type: 'text',
+        id: 2,
+        question: '',
+        answer: ''
+      }
     ]
   }
 }

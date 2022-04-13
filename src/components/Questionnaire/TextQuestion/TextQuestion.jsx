@@ -8,14 +8,14 @@ const TextQuestion = ({question, setTextAnswer}) => {
       <div className='my-dark-gradient rounded-[33px]'></div>
       
       {/* LABEL */}
-      <h3 className='text-base mb-6 trans-text text-light-text-1 dark:text-grey-8'>{question.question}</h3>
+      <h3 className='my-text-base mb-6'>{question.question}</h3>
 
       {/* QUESTION */}
       <TextareaAutosize 
         value={question.answer} 
         onChange={(e) => setTextAnswer(question.id, e.target.value)} 
         placeholder="Your answer..." 
-        className='w-full rounded-2xl p-4 bg-light-highlight text-sm text-light-text-1 resize-none focus:outline focus:outline-1 focus:outline-light-text-1'/>
+        className='my-textarea w-full rounded-2xl py-3 px-6 resize-none'/>
     </div>
   );
 };

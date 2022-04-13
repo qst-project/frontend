@@ -39,29 +39,30 @@ const AddQuestionBtn = ({addQuestion}) => {
   return (
     <div>
       <div onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='flex justify-center mx-auto my-gradient-box 
-      w-[72px] h-[72px] rounded-3xl hover:w-[252px] cursor-pointer transition-w duration-500 group'>
+      w-[72px] h-[72px] rounded-3xl hover:w-[252px] cursor-pointer transition-all duration-500 group'>
         <div className='my-light-gradient rounded-3xl'></div>
         <div className='my-dark-gradient rounded-3xl'></div>
-        <PlusIcon ref={plus} className='fill-light-text-2 w-9 h-9 mt-[18px] transition-opacity duration-500'/>
+        <PlusIcon ref={plus} className='fill-light-text-2 dark:fill-dark-text-2 w-9 h-9 mt-[18px] transition-all duration-500'/>
         <div ref={btn} className='hidden justify-around pt-[18px] overflow-visible absolute'>
 
-
-
           <div className='w-9 h-9 ml-[18px]'>
-            <button data-tip='Text (user can write a text answer to the question)' data-for='add-question-tip' onClick={() => addQuestion('text')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
-              <TextIcon className='w-full h-full'/>
+            <button data-tip='Text (user can write a text answer to the question)' data-for='add-question-tip' onClick={() => addQuestion('text')} 
+            className='group w-full h-full opacity-0 transition-opacity duration-500'>
+              <TextIcon className='w-full h-full fill-light-text-2 hover:fill-light-text-1 dark:fill-dark-text-2 dark:hover:fill-dark-text-1 transition-colors duration-300'/>
             </button>
           </div>
 
           <div className='w-9 h-9'>
-            <button data-tip='Radio (user can only select one answer from those presented)' data-for='add-question-tip' onClick={() => addQuestion('radio')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
-              <RadioIcon className='w-full h-full'/>
+            <button data-tip='Radio (user can only select one answer from those presented)' data-for='add-question-tip' onClick={() => addQuestion('radio')} 
+            className='w-full h-full opacity-0 transition-opacity duration-500'>
+              <RadioIcon className='w-full h-full fill-light-text-2 hover:fill-light-text-1 dark:fill-dark-text-2 dark:hover:fill-dark-text-1 transition-colors duration-300'/>
             </button>
           </div>
 
           <div className='w-9 h-9 mr-[18px]'>
-            <button data-tip='Checkbox (user can select multiple answers from those presented)' data-for='add-question-tip' onClick={() => addQuestion('checkbox')} className='w-full h-full fill-light-text-2 hover:fill-light-text-1 opacity-0 transition-opacity duration-500'>
-              <CheckboxIcon className='w-full h-full'/>
+            <button data-tip='Checkbox (user can select multiple answers from those presented)' data-for='add-question-tip' onClick={() => addQuestion('checkbox')} 
+            className='w-full h-full opacity-0 transition-opacity duration-500'>
+              <CheckboxIcon className='w-full h-full fill-light-text-2 hover:fill-light-text-1 dark:fill-dark-text-2 dark:hover:fill-dark-text-1 transition-colors duration-300'/>
             </button>
           </div>
 

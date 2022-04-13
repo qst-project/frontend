@@ -3,16 +3,28 @@
 @tailwind utilities;
 
 @layer components {
+  .my-text-xs {
+    @apply text-xs transition-text duration-700 text-light-text-3 dark:text-dark-text-3;
+  }
+
+  .my-text-sm {
+    @apply text-sm transition-text duration-700 text-light-text-2 dark:text-dark-text-2;
+  }
+
+  .my-text-base {
+    @apply text-base transition-text duration-700 text-light-text-1 dark:text-dark-text-1;
+  }
+
+  .my-text-lg {
+    
+  }
+
   .trans-light {
     @apply transition-opacity duration-700 dark:opacity-0;
   }
 
   .trans-dark {
     @apply  transition-opacity duration-700 opacity-0 dark:opacity-100;
-  }
-
-  .trans-text {
-    @apply transition-text duration-700;
   }
 
   .trans-bg {
@@ -24,11 +36,24 @@
   }
 
   .my-dark-gradient {
-    @apply transition-opacity duration-700 opacity-0 dark:opacity-100 -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-r from-grey-3 to-grey-2;
+    @apply transition-opacity duration-700 opacity-0 dark:opacity-100 -z-10 w-full h-full top-0 left-0 absolute bg-gradient-to-br from-dark-box-1 to-dark-box-2;
   }
 
   .my-gradient-box {
     @apply inline-block relative shadow-light-box dark:shadow-box transition-shadow duration-700;
+  }
+
+  .my-textarea {
+    @apply text-base text-light-text-2 dark:text-dark-text-2 bg-light-highlight dark:bg-dark-highlight transition-colors 
+    duration-700 focus:outline focus:outline-1 focus:outline-light-text-1 dark:focus:outline-dark-text-3;
+  }
+  
+  .my-highlight {
+    @apply bg-light-highlight dark:bg-dark-highlight transition-bg duration-700;
+  }
+
+  .my-icon {
+    @apply fill-light-text-2 dark:fill-dark-text-2 group-hover:fill-light-text-1 dark:group-hover:fill-dark-text-1 transition-colors duration-300;
   }
 }
 

@@ -472,6 +472,51 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.my-text-xs {
+  font-size: 14px;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(169 199 203 / var(--tw-text-opacity));
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-text-xs {
+  --tw-text-opacity: 1;
+  color: rgb(90 90 90 / var(--tw-text-opacity));
+}
+
+.my-text-sm {
+  font-size: 18px;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(143 170 173 / var(--tw-text-opacity));
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-text-sm {
+  --tw-text-opacity: 1;
+  color: rgb(156 156 156 / var(--tw-text-opacity));
+}
+
+.my-text-base {
+  font-size: 20px;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(108 143 148 / var(--tw-text-opacity));
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-text-base {
+  --tw-text-opacity: 1;
+  color: rgb(220 220 220 / var(--tw-text-opacity));
+}
+
 .trans-light {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -491,12 +536,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .dark .trans-dark {
   opacity: 1;
-}
-
-.trans-text {
-  transition-property: color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
 }
 
 .trans-bg {
@@ -532,10 +571,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: -10;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
   --tw-gradient-from: #404040;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(64 64 64 / 0));
-  --tw-gradient-to: #181818;
+  --tw-gradient-to: #0F0F0F;
   opacity: 0;
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -561,6 +600,67 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 15px 14px 28px -3px rgba(0, 0, 0, 0.65);
   --tw-shadow-colored: 15px 14px 28px -3px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.my-textarea {
+  background-color: rgba(50, 95, 101, 0.06);
+  font-size: 20px;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(143 170 173 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.my-textarea:focus {
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: #6C8F94;
+}
+
+.dark .my-textarea {
+  background-color: rgba(0, 0, 0, 0.1);
+  --tw-text-opacity: 1;
+  color: rgb(156 156 156 / var(--tw-text-opacity));
+}
+
+.dark .my-textarea:focus {
+  outline-color: #5A5A5A;
+}
+
+.my-highlight {
+  background-color: rgba(50, 95, 101, 0.06);
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+
+.dark .my-highlight {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.my-icon {
+  fill: #8FAAAD;
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.group:hover .my-icon {
+  fill: #6C8F94;
+}
+
+.dark .my-icon {
+  fill: #9C9C9C;
+}
+
+.dark .group:hover .my-icon {
+  fill: #DCDCDC;
 }
 
 .pointer-events-none {
@@ -660,6 +760,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -668,8 +772,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 1rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
+.-mt-1 {
+  margin-top: -0.25rem;
 }
 
 .block {
@@ -724,16 +828,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 2.5rem;
 }
 
-.h-\[10px\] {
-  height: 10px;
-}
-
 .h-2\.5 {
   height: 0.625rem;
 }
 
 .h-2 {
   height: 0.5rem;
+}
+
+.h-\[10px\] {
+  height: 10px;
 }
 
 .w-full {
@@ -764,16 +868,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.25rem;
 }
 
-.w-\[10px\] {
-  width: 10px;
-}
-
 .w-2\.5 {
   width: 0.625rem;
 }
 
 .w-2 {
   width: 0.5rem;
+}
+
+.w-\[10px\] {
+  width: 10px;
 }
 
 .basis-full {
@@ -852,14 +956,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgba(50, 95, 101, 0.06);
 }
 
-.bg-blue-1 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 233 255 / var(--tw-bg-opacity));
-}
-
 .bg-light-text-2 {
   --tw-bg-opacity: 1;
   background-color: rgb(143 170 173 / var(--tw-bg-opacity));
+}
+
+.bg-blue-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 233 255 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -871,12 +975,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(248 248 248 / 0));
 }
 
-.from-grey-4 {
+.from-dark-bg-1 {
   --tw-gradient-from: #5A5A5A;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(90 90 90 / 0));
 }
 
-.from-grey-3 {
+.from-dark-header-1 {
   --tw-gradient-from: #404040;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(64 64 64 / 0));
 }
@@ -890,11 +994,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-to: #88A7AB;
 }
 
-.to-grey-2 {
+.to-dark-bg-2 {
   --tw-gradient-to: #181818;
 }
 
-.to-grey-1 {
+.to-dark-header-2 {
   --tw-gradient-to: #0F0F0F;
 }
 
@@ -902,7 +1006,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-to: #CCDADC;
 }
 
-.fill-grey-8 {
+.fill-dark-text-1 {
   fill: #DCDCDC;
 }
 
@@ -940,6 +1044,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -948,11 +1057,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.py-\[10px\] {
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 .py-2\.5 {
@@ -965,16 +1069,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.5rem;
 }
 
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
 
 .pt-\[18px\] {
   padding-top: 18px;
-}
-
-.pr-\[30px\] {
-  padding-right: 30px;
 }
 
 .pl-12 {
@@ -985,13 +1090,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 }
 
-.text-center {
-  text-align: center;
+.pr-\[30px\] {
+  padding-right: 30px;
 }
 
-.text-xs {
-  font-size: 14px;
-  line-height: 1.25rem;
+.text-center {
+  text-align: center;
 }
 
 .text-lg {
@@ -1027,9 +1131,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(108 143 148 / var(--tw-text-opacity));
 }
 
-.text-light-text-2 {
+.text-light-text-3 {
   --tw-text-opacity: 1;
-  color: rgb(143 170 173 / var(--tw-text-opacity));
+  color: rgb(169 199 203 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -1078,8 +1182,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
-.transition-text {
-  transition-property: color;
+.transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1134,12 +1246,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(108 143 148 / var(--tw-text-opacity));
 }
 
-.dark .dark\:bg-white-008 {
+.group:hover .group-hover\:duration-300 {
+  transition-duration: 300ms;
+}
+
+.dark .dark\:bg-dark-headerbtn {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.dark .dark\:bg-white-003 {
-  background-color: rgba(255, 255, 255, 0.02);
+.dark .dark\:bg-dark-highlight {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .dark .dark\:bg-blue-1 {
@@ -1156,22 +1272,35 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(188 247 255 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:text-grey-8 {
+.dark .dark\:bg-dark-text-2 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 156 156 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-dark-text-3 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(90 90 90 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:fill-dark-text-2 {
+  fill: #9C9C9C;
+}
+
+.dark .dark\:text-dark-text-1 {
   --tw-text-opacity: 1;
   color: rgb(220 220 220 / var(--tw-text-opacity));
 }
 
-.dark .dark\:text-grey-4 {
+.dark .dark\:text-dark-text-3 {
   --tw-text-opacity: 1;
   color: rgb(90 90 90 / var(--tw-text-opacity));
 }
 
-.dark .dark\:text-grey-6 {
-  --tw-text-opacity: 1;
-  color: rgb(156 156 156 / var(--tw-text-opacity));
+.dark .dark\:hover\:fill-dark-text-1:hover {
+  fill: #DCDCDC;
 }
 
-.dark .group:hover .dark\:group-hover\:text-grey-7 {
+.dark .group:hover .dark\:group-hover\:text-dark-text-1 {
   --tw-text-opacity: 1;
-  color: rgb(193 193 193 / var(--tw-text-opacity));
+  color: rgb(220 220 220 / var(--tw-text-opacity));
 }
