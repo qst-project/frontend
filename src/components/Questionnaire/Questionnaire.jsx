@@ -15,7 +15,7 @@ import {GetSurveyRequest} from "../../proto/questionnaire_pb"
 // )
 
 
-const client = new QuestionnaireClient("https://localhost:9090", null, null)
+const client = new QuestionnaireClient("https://localhost:8080", null, null)
 
 
 const Questionnaire = () => {
@@ -38,7 +38,7 @@ const Questionnaire = () => {
       console.log(err);
       console.log(response)
     })
-    console.log(request)
+    // `console.log(request)
   }
 
   return (
