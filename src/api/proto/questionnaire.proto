@@ -1,0 +1,65 @@
+syntax = "proto3";
+option go_package = "../../pkg/proto";
+
+package proto;
+
+service QuestionnaireService {
+  rpc CreateQuestionnaire(CreateQuestionnaireRequest) returns (CreateQuestionnaireResponse) {};
+  rpc GetQuestionnaire(GetQuestionnaireRequest) returns (GetQuestionnaireResponse) {};
+  rpc UpdateQuestionnaire(UpdateQuestionnaireRequest) returns (UpdateQuestionnaireResponse) {};
+}
+
+message CreateQuestionnaireRequest {
+  Questionnaire questionnaire = 1;
+}
+
+message CreateQuestionnaireResponse {
+  string ref = 1;
+  Error error = 2;
+}
+
+message GetQuestionnaireRequest {
+  string ref = 1;
+}
+
+message GetQuestionnaireResponse {
+  Questionnaire questionnaire = 1;
+  Error error = 2;
+}
+
+message UpdateQuestionnaireRequest {
+  Questionnaire questionnaire = 1;
+}
+
+message UpdateQuestionnaireResponse {
+  Error error = 1;
+}
+
+message DeleteQuestionnaireRequest {
+  string ref = 1;
+}
+
+message Questionnaire {
+  uint32 id = 1;
+  string title = 2;
+  string ref = 3;
+  repeated Question questions = 4;
+}
+
+message Question {
+  string id = 1;
+  string statement = 2;
+  Types type = 3;
+  repeated string options = 4;
+}
+
+enum Types {
+  RADIO = 0;
+  CHECKBOX = 1;
+  TEXT = 2;
+}
+
+message  Error {
+  string text = 1;
+  int32 code = 2;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCheckboxAC, selectRadioAC, setTextAnswerAC } from '../../redux/actions';
+import { selectCheckboxAC, selectRadioAC } from './../../redux/actions/actions';
 import BtnSubmit from '../UI/BtnSubmit/BtnSubmit';
 import CheckboxQuestion from './CheckboxQuestion/CheckboxQuestion';
 import RadioQuestion from './RadioQuestion/RadioQuestion';
@@ -13,6 +13,7 @@ const Questionnaire = () => {
 
   const selectCheckbox = (questionID, answerID) => {
     dispatch(selectCheckboxAC(questionID, answerID));
+
   }
 
   const selectRadio = (questionID, answerID) => {
