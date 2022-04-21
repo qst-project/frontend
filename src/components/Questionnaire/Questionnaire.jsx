@@ -12,6 +12,7 @@ const Questionnaire = () => {
 
   const selectCheckbox = (questionID, answerID) => {
     dispatch(selectCheckboxAC(questionID, answerID));
+
   }
 
   const selectRadio = (questionID, answerID) => {

@@ -42,35 +42,20 @@ const INITIAL_STATE = {
 
 export default handleActions({
   [selectCheckboxAC](state, action) {
-    const newQuestions = [...state.questions];
-    const checked = newQuestions[action.questionID].answers[action.answerID].checked;
-    newQuestions[action.questionID].answers[action.answerID].checked = !checked;
-    return { ...state, questions: newQuestions }
+    const questionID = action.payload.questionID;
+    const answerID = action.payload.answerID;
+    const questions = [...state.questions];
+    const checked = questions[questionID].answers[answerID].checked;
+    questions[questionID].answers[answerID].checked = !checked;
+    return { ...state, questions: questions }
   },
   [selectRadioAC](state, action) {
-    const newQuestions = [...state.questions];
-    const answers = newQuestions[action.questionID].answers;
+    const questionID = action.payload.questionID;
+    const answerID = action.payload.answerID;
+    const questions = [...state.questions];
+    const answers = questions[questionID].answers;
     for (let answer of answers) answer.checked = false;
-    answers[action.answerID].checked = !answers[action.answerID].checked;
-    return { ...state, questions: newQuestions }
+    answers[answerID].checked = !answers[answerID].checked;
+    return { ...state, questions: questions }
   }
 }, INITIAL_STATE)
-
-// export const questReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case SELECT_CHECKBOX: {
-//       const newQuestions = [...state.questions];
-//       const checked = newQuestions[action.questionID].answers[action.answerID].checked;
-//       newQuestions[action.questionID].answers[action.answerID].checked = !checked;
-//       return { ...state, questions: newQuestions };
-//     }
-//     case SELECT_RADIO: {
-//       const newQuestions = [...state.questions];
-//       const answers = newQuestions[action.questionID].answers;
-//       for (let answer of answers) answer.checked = false;
-//       answers[action.answerID].checked = !answers[action.answerID].checked;
-//       return { ...state, questions: newQuestions }
-//     }
-//     default: return state;
-//   }
-// }

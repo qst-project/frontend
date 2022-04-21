@@ -18,5 +18,15 @@ import { SELECT_CHECKBOX, SELECT_RADIO } from "../../constants/actionTypes"
 // }
 
 
-export const selectCheckboxAC = createAction(SELECT_CHECKBOX)
-export const selectRadioAC = createAction(SELECT_RADIO)
+export const selectCheckboxAC = createAction(SELECT_CHECKBOX, (questionID, answerID) => {
+    return {
+        questionID,
+        answerID
+    }
+})
+export const selectRadioAC = createAction(SELECT_RADIO, (questionID, answerID) => {
+    return {
+        questionID,
+        answerID
+    }
+})
