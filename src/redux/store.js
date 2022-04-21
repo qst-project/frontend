@@ -1,9 +1,6 @@
-import { combineReducers, createStore } from 'redux';
+import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { questReducer } from './reducers/questReducer';
+import middleware  from './sagas/index';
+import rootReducer from './reducers/index';
 
-const rootReducer = combineReducers({
-  questionnaire: questReducer
-})
-
-export default createStore(rootReducer, composeWithDevTools());
+export default createStore(rootReducer, middleware, composeWithDevTools());
