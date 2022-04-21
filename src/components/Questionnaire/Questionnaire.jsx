@@ -5,8 +5,8 @@ import BtnSubmit from '../UI/BtnSubmit/BtnSubmit';
 import CheckboxQuestion from './CheckboxQuestion/CheckboxQuestion';
 import RadioQuestion from './RadioQuestion/RadioQuestion';
 
-import { QuestionnaireClient } from '../../proto/questionnaire_grpc_web_pb';
-import {GetSurveyRequest} from "../../proto/questionnaire_pb"
+import { QuestionnaireServiceClient } from '../../proto/questionnaire_grpc_web_pb';
+import {GetQuestionnaireRequest} from "../../proto/questionnaire_pb"
 
 // const client = new QuestionnaireClient(
 //   "http://localhost:8081",
@@ -15,7 +15,7 @@ import {GetSurveyRequest} from "../../proto/questionnaire_pb"
 // )
 
 
-const client = new QuestionnaireClient("https://localhost:8080", null, null)
+const client = new QuestionnaireServiceClient("http://localhost:9090",  null, null)
 
 
 const Questionnaire = () => {
@@ -32,9 +32,13 @@ const Questionnaire = () => {
   }
 
   const handler = () => {
-    const request = new GetSurveyRequest();
+    const request = new GetQuestionnaireRequest();
+  
     request.setRef("TestRef")
-    client.getSurvey(request, null, (err, response) => {
+    // var metadata = { 'Content-type': 'application/grpc-web-text+proto' };
+    // request.Header.Set("content-type", "application/grpc-text")
+    console.log(request)
+    client.getQuestionnaire(request, {}, (err, response) => {
       console.log(err);
       console.log(response)
     })
