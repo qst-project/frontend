@@ -14,9 +14,17 @@ export const selectRadioAC = createAction(SELECT_RADIO, (questionID, answerID) =
     }
 })
 
-export const addQuestionAC = createAction(ADD_QUESTION, type => type)
+export const addQuestionAC = createAction(ADD_QUESTION, (type) => {
+    return {
+        type
+    }
+})
 
-export const addAnswerAC = createAction(ADD_ANSWER, questionID => questionID)
+export const addAnswerAC = createAction(ADD_ANSWER, (questionID) => {
+    return{
+        questionID
+    }
+})
 
 export const setQuestionAC = createAction(SET_QUESTION, (questionID, value) => {
     return {
@@ -25,7 +33,7 @@ export const setQuestionAC = createAction(SET_QUESTION, (questionID, value) => {
     }
 })
 
-export const setAnswerAC = createAction(SET_QUESTION, (questionID, answerID, value) => {
+export const setAnswerAC = createAction(SET_ANSWER, (questionID, answerID, value) => {
     return {
         questionID,
         answerID,
@@ -49,14 +57,9 @@ export const changeQuestionsOrderAC = createAction(CHANGE_QUESTIONS_ORDER, (sour
     }
 })
 
-/*
-import { ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER, REMOVE_ANSWER, REMOVE_QUESTION, SELECT_CHECKBOX, SELECT_RADIO, SET_ANSWER, SET_QUESTION, SET_TEXT_ANSWER } from "./../constants/actionTypes"
-
-export const setTextAnswerAC = (questionID, value) => {
-  return {
-    type: SET_TEXT_ANSWER,
-    questionID,
-    value
-  }
-}
-*/
+export const setTextAnswerAC = createAction(SET_TEXT_ANSWER, (value, questionID) => {
+    return {
+        value,
+        questionID,
+    }
+})

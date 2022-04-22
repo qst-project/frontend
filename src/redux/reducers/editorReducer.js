@@ -1,6 +1,7 @@
-import { ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER, REMOVE_ANSWER, REMOVE_QUESTION, SET_ANSWER, SET_QUESTION } from "../types";
+import { handleActions } from 'redux-actions';
+import { addAnswerAC, addQuestionAC, changeQuestionsOrderAC, removeAnswerAC, removeQuestionAC, setAnswerAC, setQuestionAC } from '../actions/actions';
 
-const initialState = {
+const INITIAL_STATE = {
   questionnaire: {
     title: 'My survey',
     questions: [
@@ -9,7 +10,7 @@ const initialState = {
         id: 0,
         question: '',
         answers: [
-          {label: ''}
+          { label: '' }
         ]
       },
 
@@ -18,7 +19,7 @@ const initialState = {
         id: 1,
         question: '',
         answers: [
-          {label: ''}
+          { label: '' }
         ]
       },
 
@@ -32,83 +33,75 @@ const initialState = {
   }
 }
 
-export const editorReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_QUESTION: {
-      const newQuestions = [...state.questionnaire.questions];
-      let question = {};
-      switch (action.kind) {
-        case 'checkbox': {
-          question = {
-            type: action.kind,
-            question: '',
-            answers: []
-          };
-          break;
-        }
-        case 'radio': {
-          question = {
-            type: action.kind,
-            question: '',
-            answers: []
-          };
-          break;
-        }
-        case 'text': {
-          question = {
-            type: action.kind,
-            question: ''
-          };
-          break;
-        }
+export default handleActions({
+  [addQuestionAC](state, action) {
+    console.log(action)
+    const newQuestions = [...state.questionnaire.questions];
+    let question = {};
+    switch (action.payload.type) {
+      case 'checkbox': {
+        question = {
+          type: action.payload.type,
+          question: '',
+          answers: []
+        };
+        break;
       }
-      question.id = state.questionnaire.questions.length;
-      newQuestions.push(question);
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
+      case 'radio': {
+        question = {
+          type: action.payload.type,
+          question: '',
+          answers: []
+        };
+        break;
+      }
+      case 'text': {
+        question = {
+          type: action.payload.type,
+          question: ''
+        };
+        break;
+      }
     }
-
-    case ADD_ANSWER: {
-      const newQuestions = [...state.questionnaire.questions];
-      newQuestions[action.questionID].answers.push({
-        label: ''
-      });
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
-    }
-
-    case SET_QUESTION: {
-      const newQuestions = [...state.questionnaire.questions];
-      newQuestions[action.questionID].question = action.value;
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
-    }
-
-    case SET_ANSWER: {
-      const newQuestions = [...state.questionnaire.questions];
-      newQuestions[action.questionID].answers[action.answerID].label = action.value;
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
-    }
-
-    case REMOVE_QUESTION: {
-      const newQuestions = [...state.questionnaire.questions];
-      newQuestions.splice(action.questionID, 1);
-      newQuestions.forEach((question, index) => question.id = index);
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
-    }
-
-    case REMOVE_ANSWER: {
-      const newQuestions = [...state.questionnaire.questions];
-      newQuestions[action.questionID].answers.splice(action.answerID, 1);
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
-    }
-
-    case CHANGE_QUESTIONS_ORDER: {
-      const newQuestions = [...state.questionnaire.questions];
-      const source = action.sourceID;
-      const dest = action.destinationID;
-      [newQuestions[source], newQuestions[dest]] = [newQuestions[dest], newQuestions[source]];
-      newQuestions.forEach((question, index) => question.id = index);
-      return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
-    }
-
-    default: return state;
+    question.id = state.questionnaire.questions.length;
+    newQuestions.push(question);
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
+  },
+  [addAnswerAC](state, action) {
+    const newQuestions = [...state.questionnaire.questions];
+    newQuestions[action.payload.questionID].answers.push({
+      label: ''
+    });
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
+  },
+  [setQuestionAC](state, action) {
+    const newQuestions = [...state.questionnaire.questions];
+    console.log(action)
+    newQuestions[action.payload.questionID].question = action.payload.value;
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
+  },
+  [setAnswerAC](state, action) {
+    const newQuestions = [...state.questionnaire.questions];
+    newQuestions[action.payload.questionID].answers[action.payload.answerID].label = action.payload.value;
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
+  },
+  [removeQuestionAC](state, action) {
+    const newQuestions = [...state.questionnaire.questions];
+    newQuestions.splice(action.payload.questionID, 1);
+    newQuestions.forEach((question, index) => question.id = index);
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
+  },
+  [removeAnswerAC](state, action) {
+    const newQuestions = [...state.questionnaire.questions];
+    newQuestions[action.payload.questionID].answers.splice(action.payload.answerID, 1);
+    return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
+  },
+  [changeQuestionsOrderAC](state, action) {
+    const newQuestions = [...state.questionnaire.questions];
+    const source = action.payload.sourceID;
+    const dest = action.payload.destinationID;
+    [newQuestions[source], newQuestions[dest]] = [newQuestions[dest], newQuestions[source]];
+    newQuestions.forEach((question, index) => question.id = index);
+    return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
   }
-}
+}, INITIAL_STATE)

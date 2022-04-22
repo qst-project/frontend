@@ -1,7 +1,7 @@
 import React from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
-import { addAnswerAC, addQuestionAC, changeQuestionsOrderAC, removeAnswerAC, removeQuestionAC, setAnswerAC, setQuestionAC } from '../../redux/actions';
+import { addAnswerAC, addQuestionAC, changeQuestionsOrderAC, removeAnswerAC, removeQuestionAC, setAnswerAC, setQuestionAC } from '../../redux/actions/actions';
 import AddQuestionBtn from './AddQuestionBtn/AddQuestionBtn';
 import EditSelectQuestion from './EditSelectQuestion/EditSelectQuestion';
 import EditTextQuestion from './EditTextQuestion/EditTextQuestion';
