@@ -1,9 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCheckboxAC, selectRadioAC } from './../../redux/actions/actions';
+import { selectCheckboxAC, selectRadioAC, setTextAnswerAC } from './../../redux/actions/actions';
 import BtnSubmit from '../UI/BtnSubmit/BtnSubmit';
 import CheckboxQuestion from './CheckboxQuestion/CheckboxQuestion';
 import RadioQuestion from './RadioQuestion/RadioQuestion';
+import TextQuestion from './TextQuestion/TextQuestion';
 
 const Questionnaire = () => {
   const state = useSelector((state) => state.questionnaire);
@@ -16,12 +17,19 @@ const Questionnaire = () => {
   }
 
   const selectRadio = (questionID, answerID) => {
-    dispatch(selectRadioAC(questionID, answerID))
+    dispatch(selectRadioAC(questionID, answerID));
+  }
+
+  const setTextAnswer = (questionID, value) => {
+    dispatch(setTextAnswerAC(questionID, value));
   }
 
   return (
     <div className='w-full flex flex-col items-center'>
+      {/* TITLE */}
       <h2 style={{textShadow: '6px 5px 10px rgba(0, 0, 0, 0.27)'}} className='text-lg text-white uppercase tracking-[18px] text-center mt-24'>{title}</h2>
+      
+      {/* QUESTIONS */}
       <div className='w-full mt-24'>
         {questions.map(question => {
           switch (question.type) {
@@ -29,6 +37,8 @@ const Questionnaire = () => {
               return <RadioQuestion selectRadio={selectRadio} question={question} questionID={question.id} key={question.id}/>
             case 'checkbox':
               return <CheckboxQuestion selectCheckbox={selectCheckbox} question={question} questionID={question.id} key={question.id}/>
+            case 'text':
+              return <TextQuestion question={question} setTextAnswer={setTextAnswer} key={question.id}/>
           }
         })}
       </div>
