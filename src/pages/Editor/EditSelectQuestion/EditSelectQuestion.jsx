@@ -16,10 +16,10 @@ export default ({question, addAnswer, setQuestion, setAnswer, removeQuestion, re
 
       {/* QUESTION LABEL */}
       <div className='mb-6 w-full flex'>
-        <input type='text' placeholder='Your question...' value={question.question} onChange={(e) => setQuestion(question.id, e.target.value)}
+        <input data-cy="QuestionTitle" type='text' placeholder='Your question...' value={question.question} onChange={(e) => setQuestion(question.id, e.target.value)}
         className='px-4 h-10 basis-full my-textarea rounded-xl'></input>
         {/* REMOVE BUTTON */}
-        <button onClick={() => removeQuestion(question.id)} data-tip='Remove question' data-for='global-tip' 
+        <button data-cy="DeleteQuestionBtn" onClick={() => removeQuestion(question.id)} data-tip='Remove question' data-for='global-tip' 
         className='group p-2 my-highlight rounded-xl ml-2'>
           <RemoveIcon className='my-icon w-6 h-6'/>
         </button>
@@ -35,7 +35,7 @@ export default ({question, addAnswer, setQuestion, setAnswer, removeQuestion, re
           answerID={index} 
           answer={answer}
           type={question.type}/>))}
-        <button onClick={() => addAnswer(question.id)} data-tip='Add new answer' data-for='global-tip' 
+        <button data-cy="AddAnswerBtn" onClick={() => addAnswer(question.id)} data-tip='Add new answer' data-for='global-tip' 
         className='my-highlight group p-2 rounded-xl'>
           <PlusIcon className='my-icon w-6 h-6'></PlusIcon>
         </button>

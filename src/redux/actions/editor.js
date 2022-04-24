@@ -3,7 +3,7 @@ import { createAction } from 'redux-actions'
 import {
     ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER,
     REMOVE_ANSWER, REMOVE_QUESTION,
-    SET_ANSWER, SET_QUESTION, SET_TEXT_ANSWER
+    SET_ANSWER, SET_QUESTION,
 } from "@constants/actionTypes"
 
 export const addQuestionAC = createAction(ADD_QUESTION, (type) => {
@@ -49,9 +49,3 @@ export const changeQuestionsOrderAC = createAction(CHANGE_QUESTIONS_ORDER, (sour
     }
 })
 
-export const setTextAnswerAC = createAction(SET_TEXT_ANSWER, (value, questionID) => {
-    return {
-        value,
-        questionID,
-    }
-})

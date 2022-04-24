@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectCheckboxAC, selectRadioAC, setTextAnswerAC } from '@actions/questionnaire';
-import BtnSubmit from '../UI/BtnSubmit/BtnSubmit';
+import BtnSubmit from '@components/UI/BtnSubmit/BtnSubmit';
 import CheckboxQuestion from './CheckboxQuestion/CheckboxQuestion';
 import RadioQuestion from './RadioQuestion/RadioQuestion';
 import TextQuestion from './TextQuestion/TextQuestion';

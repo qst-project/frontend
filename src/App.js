@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 import ErrorFallback from '@components/ErrorFallback/ErrorFallback';
 import * as components from '@components';
+import * as pages from '@pages';
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
       <components.Header/>
       <div className='container mx-auto'>
         <Routes>
-          <Route path='/' element={<components.Questionnaire/>}/>
-          <Route path='/editor' element={<components.Editor/>}/>
+          <Route path='/' element={<pages.Questionnaire/>}/>
+          <Route path='/editor' element={<pages.Editor/>}/>
           <Route path='*' element={<></>}/>
         </Routes>
         {/* <button onClick={() => func({})}>ERROR</button> */}

@@ -38,7 +38,7 @@ export default ({addQuestion}) => {
 
   return (
     <div>
-      <div onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='flex justify-center mx-auto my-gradient-box 
+      <div data-cy="AddQuestionBtn" onMouseEnter={unwrapBtn} onMouseLeave={wrapBtn} ref={btnBg} className='flex justify-center mx-auto my-gradient-box 
       w-[72px] h-[72px] rounded-3xl hover:w-[252px] cursor-pointer transition-all duration-500 group'>
         <div className='my-light-gradient rounded-3xl'></div>
         <div className='my-dark-gradient rounded-3xl'></div>
@@ -53,7 +53,7 @@ export default ({addQuestion}) => {
           </div>
 
           <div className='w-9 h-9'>
-            <button data-tip='Radio (user can only select one answer from those presented)' data-for='add-question-tip' onClick={() => addQuestion('radio')} 
+            <button data-cy="AddRadioQuestionBtn" data-tip='Radio (user can only select one answer from those presented)' data-for='add-question-tip' onClick={() => addQuestion('radio')} 
             className='w-full h-full opacity-0 transition-opacity duration-500'>
               <RadioIcon className='w-full h-full fill-light-text-2 hover:fill-light-text-1 dark:fill-dark-text-2 dark:hover:fill-dark-text-1 transition-colors duration-300'/>
             </button>

@@ -26,9 +26,9 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-scripts test",
-    "test:cypress": "start-server-and-test start http://localhost:3000 cypress",
-    "cypress": "cypress open",
+    "cypress": "start-server-and-test start http://localhost:3000 cypress:open",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^9.5.4",
     "eslint-plugin-cypress": "^2.12.1",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1",

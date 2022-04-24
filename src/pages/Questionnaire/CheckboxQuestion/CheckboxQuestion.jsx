@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckboxAnswer from './CheckboxAnswer/CheckboxAnswer';
+import CheckboxAnswer from './CheckboxAnswer';
 import propTypes from 'prop-types';
 
 const CheckboxQuestion = ({question, selectCheckbox, questionID}) => {
