@@ -1,5 +1,13 @@
 import { handleActions } from 'redux-actions';
-import { addAnswerAC, addQuestionAC, changeQuestionsOrderAC, removeAnswerAC, removeQuestionAC, setAnswerAC, setQuestionAC } from '../actions/actions';
+import {
+  addAnswerAC,
+  addQuestionAC,
+  changeQuestionsOrderAC,
+  removeAnswerAC,
+  removeQuestionAC,
+  setAnswerAC,
+  setQuestionAC
+} from '@actions/editor';
 
 const INITIAL_STATE = {
   questionnaire: {
@@ -94,7 +102,7 @@ export default handleActions({
   [removeAnswerAC](state, action) {
     const newQuestions = [...state.questionnaire.questions];
     newQuestions[action.payload.questionID].answers.splice(action.payload.answerID, 1);
-    return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
   },
   [changeQuestionsOrderAC](state, action) {
     const newQuestions = [...state.questionnaire.questions];
@@ -102,6 +110,6 @@ export default handleActions({
     const dest = action.payload.destinationID;
     [newQuestions[source], newQuestions[dest]] = [newQuestions[dest], newQuestions[source]];
     newQuestions.forEach((question, index) => question.id = index);
-    return {...state, questionnaire: {...state.questionnaire, questions: newQuestions}};
+    return { ...state, questionnaire: { ...state.questionnaire, questions: newQuestions } };
   }
 }, INITIAL_STATE)

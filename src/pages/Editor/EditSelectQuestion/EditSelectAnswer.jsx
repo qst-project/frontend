@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import {ReactComponent as RemoveIcon} from '../../../../icons/remove.svg';
 
-const EditSelectAnswer = ({answer, questionID, answerID, setAnswer, removeAnswer, type}) => {
+import {ReactComponent as RemoveIcon} from '@icons/remove.svg';
+
+export default ({answer, questionID, answerID, setAnswer, removeAnswer, type}) => {
   const removeBtn = useRef();
   const textArea = useRef();
   const bulb = useRef();
@@ -31,6 +32,7 @@ const EditSelectAnswer = ({answer, questionID, answerID, setAnswer, removeAnswer
       {/* TEXTAREA */}
       <div className='relative mt-1'>
         <TextareaAutosize 
+          data-cy="Answer"
           ref={textArea}
           value={answer.label} 
           onChange={(e) => setAnswer(questionID, answerID, e.target.value)} 
@@ -43,7 +45,7 @@ const EditSelectAnswer = ({answer, questionID, answerID, setAnswer, removeAnswer
       
       {/* REMOVE BUTTON */}
       <div ref={removeBtn} className='flex items-center opacity-0 transition-opacity duration-300 ml-2'>
-        <button onClick={() => removeAnswer(questionID, answerID)} data-tip='Remove answer' data-for='global-tip' 
+        <button data-cy="DeleteAnwerBtn" onClick={() => removeAnswer(questionID, answerID)} data-tip='Remove answer' data-for='global-tip' 
         className='group -mt-1 p-2 self-center my-highlight rounded-xl'>
           <RemoveIcon className='my-icon w-6 h-6'/>
         </button>
@@ -51,5 +53,3 @@ const EditSelectAnswer = ({answer, questionID, answerID, setAnswer, removeAnswer
     </div>
   );
 };
-
-export default EditSelectAnswer;

@@ -1,7 +1,17 @@
 import React from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { useDispatch, useSelector } from 'react-redux';
-import { addAnswerAC, addQuestionAC, changeQuestionsOrderAC, removeAnswerAC, removeQuestionAC, setAnswerAC, setQuestionAC } from '../../redux/actions/actions';
+
+import {
+  addAnswerAC,
+  addQuestionAC,
+  changeQuestionsOrderAC,
+  removeAnswerAC,
+  removeQuestionAC,
+  setAnswerAC,
+  setQuestionAC
+} from '@actions/editor';
+
 import AddQuestionBtn from './AddQuestionBtn/AddQuestionBtn';
 import EditSelectQuestion from './EditSelectQuestion/EditSelectQuestion';
 import EditTextQuestion from './EditTextQuestion/EditTextQuestion';
@@ -60,36 +70,36 @@ const Editor = () => {
                         return (
                           <div className='w-full' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                             <EditSelectQuestion
-                            question={question} 
-                            addAnswer={addAnswer} 
-                            setQuestion={setQuestion} 
-                            setAnswer={setAnswer} 
-                            removeQuestion={removeQuestion} 
-                            removeAnswer={removeAnswer}/>
+                              question={question}
+                              addAnswer={addAnswer}
+                              setQuestion={setQuestion}
+                              setAnswer={setAnswer}
+                              removeQuestion={removeQuestion}
+                              removeAnswer={removeAnswer} />
                           </div>)
                       case 'radio':
                         return (
                           <div className='w-full' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                            <EditSelectQuestion 
-                            question={question} 
-                            addAnswer={addAnswer} 
-                            setQuestion={setQuestion} 
-                            setAnswer={setAnswer} 
-                            removeQuestion={removeQuestion} 
-                            removeAnswer={removeAnswer}/>
+                            <EditSelectQuestion
+                              question={question}
+                              addAnswer={addAnswer}
+                              setQuestion={setQuestion}
+                              setAnswer={setAnswer}
+                              removeQuestion={removeQuestion}
+                              removeAnswer={removeAnswer} />
                           </div>)
                       case 'text':
                         return (
                           <div className='w-full' {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
-                            <EditTextQuestion 
-                            question={question} 
-                            setQuestion={setQuestion} 
-                            removeQuestion={removeQuestion} />
+                            <EditTextQuestion
+                              question={question}
+                              setQuestion={setQuestion}
+                              removeQuestion={removeQuestion} />
                           </div>)
                     }
                   }}
                 </Draggable>
-              ))} 
+              ))}
               {provided.placeholder}
             </div>
           )}

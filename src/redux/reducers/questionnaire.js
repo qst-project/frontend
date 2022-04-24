@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { selectCheckboxAC, selectRadioAC } from "../actions/actions";
+import { selectCheckboxAC, selectRadioAC } from "@actions/questionnaire";
 
 const INITIAL_STATE = {
   title: 'My survey',
