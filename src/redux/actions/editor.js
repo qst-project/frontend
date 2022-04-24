@@ -1,18 +1,10 @@
 import { createAction } from 'redux-actions'
-import { ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER, REMOVE_ANSWER, REMOVE_QUESTION, SELECT_CHECKBOX, SELECT_RADIO, SET_ANSWER, SET_QUESTION, SET_TEXT_ANSWER } from "../../constants/actionTypes"
 
-export const selectCheckboxAC = createAction(SELECT_CHECKBOX, (questionID, answerID) => {
-    return {
-        questionID,
-        answerID
-    }
-})
-export const selectRadioAC = createAction(SELECT_RADIO, (questionID, answerID) => {
-    return {
-        questionID,
-        answerID
-    }
-})
+import {
+    ADD_ANSWER, ADD_QUESTION, CHANGE_QUESTIONS_ORDER,
+    REMOVE_ANSWER, REMOVE_QUESTION,
+    SET_ANSWER, SET_QUESTION, SET_TEXT_ANSWER
+} from "@constants/actionTypes"
 
 export const addQuestionAC = createAction(ADD_QUESTION, (type) => {
     return {
@@ -21,7 +13,7 @@ export const addQuestionAC = createAction(ADD_QUESTION, (type) => {
 })
 
 export const addAnswerAC = createAction(ADD_ANSWER, (questionID) => {
-    return{
+    return {
         questionID
     }
 })

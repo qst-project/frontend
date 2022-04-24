@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import {ReactComponent as RemoveIcon} from '../../../../icons/remove.svg';
 
-const EditSelectAnswer = ({answer, questionID, answerID, setAnswer, removeAnswer, type}) => {
+import {ReactComponent as RemoveIcon} from '@icons/remove.svg';
+
+export default ({answer, questionID, answerID, setAnswer, removeAnswer, type}) => {
   const removeBtn = useRef();
   const textArea = useRef();
   const bulb = useRef();
@@ -51,5 +52,3 @@ const EditSelectAnswer = ({answer, questionID, answerID, setAnswer, removeAnswer
     </div>
   );
 };
-
-export default EditSelectAnswer;

@@ -1,8 +1,8 @@
 import React from 'react';
-import {ReactComponent as SunIcon} from '../../icons/sun.svg';
-import {ReactComponent as MoonIcon} from '../../icons/moon.svg';
+import {ReactComponent as SunIcon} from '@icons/sun.svg';
+import {ReactComponent as MoonIcon} from '@icons/moon.svg';
 
-const ThemeBtn = () => {
+export default () => {
   let changeTheme = () => {
     let cls = document.querySelector('html').classList;
     cls.toggle('dark');
@@ -18,5 +18,3 @@ const ThemeBtn = () => {
     </button>
   );
 };
-
-export default ThemeBtn;

@@ -21,5 +21,4 @@ RadioAnswer.propTypes = {
   answerID: propTypes.number,
   checked: propTypes.bool
 }
-
-export default RadioAnswer;
+export default RadioAnswer

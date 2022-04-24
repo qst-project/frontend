@@ -1,7 +1,7 @@
 import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-const TextQuestion = ({question, setTextAnswer}) => {
+export default ({question, setTextAnswer}) => {
   return (
     <div className='my-gradient-box w-full mb-10 p-9 rounded-[33px]'>
       <div className='my-light-gradient rounded-[33px]'></div>
@@ -19,5 +19,3 @@ const TextQuestion = ({question, setTextAnswer}) => {
     </div>
   );
 };
-
-export default TextQuestion;

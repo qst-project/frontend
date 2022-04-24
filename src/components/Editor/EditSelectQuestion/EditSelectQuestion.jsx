@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import EditSelectAnswer from './EditSelectAnswer/EditSelectAnswer';
-import {ReactComponent as PlusIcon} from '../../../icons/plus.svg';
-import {ReactComponent as RemoveIcon} from '../../../icons/remove.svg';
+import EditSelectAnswer from './EditSelectAnswer';
+import {ReactComponent as PlusIcon} from '@icons/plus.svg';
+import {ReactComponent as RemoveIcon} from '@icons/remove.svg';
 import ReactTooltip from 'react-tooltip';
 
-const EditSelectQuestion = ({question, addAnswer, setQuestion, setAnswer, removeQuestion, removeAnswer}) => {
+export default ({question, addAnswer, setQuestion, setAnswer, removeQuestion, removeAnswer}) => {
   useEffect(() => {
     ReactTooltip.rebuild();
   })
@@ -43,5 +43,3 @@ const EditSelectQuestion = ({question, addAnswer, setQuestion, setAnswer, remove
     </div>
   );
 };
-
-export default EditSelectQuestion;

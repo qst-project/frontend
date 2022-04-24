@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import {ReactComponent as PlusIcon} from '../../../icons/plus.svg';
-import {ReactComponent as RadioIcon} from '../../../icons/radio.svg';
-import {ReactComponent as CheckboxIcon} from '../../../icons/checkbox.svg';
-import {ReactComponent as TextIcon} from '../../../icons/text.svg';
+import {ReactComponent as PlusIcon} from '@icons/plus.svg';
+import {ReactComponent as RadioIcon} from '@icons/radio.svg';
+import {ReactComponent as CheckboxIcon} from '@icons/checkbox.svg';
+import {ReactComponent as TextIcon} from '@icons/text.svg';
 
-const AddQuestionBtn = ({addQuestion}) => {
+export default ({addQuestion}) => {
   const btnBg = useRef();
   const btn = useRef();
   const plus = useRef();
@@ -71,5 +71,3 @@ const AddQuestionBtn = ({addQuestion}) => {
     </div>
   );
 };
-
-export default AddQuestionBtn;

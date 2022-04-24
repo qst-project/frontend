@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioAnswer from './RadioAnswer/RadioAnswer';
+import RadioAnswer from './RadioAnswer';
 import propTypes from 'prop-types';
 
 const RadioQuestion = ({question, selectRadio, questionID}) => {

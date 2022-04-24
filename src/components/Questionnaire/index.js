@@ -1,1 +1,1 @@
-export {default as Quest} from './Questionnaire';
+export {default as Questionnaire} from './Questionnaire';
