@@ -15,6 +15,7 @@ function App() {
       <components.Header/>
       <div className='container mx-auto'>
         <Routes>
+          <Route path='/home' element={<pages.Home/>}/>
           <Route path='/' element={<pages.Questionnaire/>}/>
           <Route path='/editor' element={<pages.Editor/>}/>
           <Route path='*' element={<></>}/>
