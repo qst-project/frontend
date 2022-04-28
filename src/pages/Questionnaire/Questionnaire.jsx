@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectCheckboxAC, selectRadioAC, setTextAnswerAC } from '@actions/questionnaire';
+import { selectCheckboxAC, selectRadioAC, setTextAnswerAC, getQuestionnaireAC } from '@actions/questionnaire';
 import BtnSubmit from '@components/UI/BtnSubmit/BtnSubmit';
 import CheckboxQuestion from './CheckboxQuestion/CheckboxQuestion';
 import RadioQuestion from './RadioQuestion/RadioQuestion';
@@ -24,6 +24,13 @@ const Questionnaire = () => {
   const setTextAnswer = (questionID, value) => {
     dispatch(setTextAnswerAC(questionID, value));
   }
+
+  // get Questionnaire
+  useEffect(() => {
+    let url = new URL(window.location.href);
+    let questionnaireRef = url.pathname.slice(1);
+    dispatch(getQuestionnaireAC(questionnaireRef));
+  }, [state.title])
 
   return (
     <div className='w-full flex flex-col items-center'>

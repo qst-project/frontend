@@ -1,17 +1,17 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
-import Api from '...'
+import { call, put, take, takeLatest } from 'redux-saga/effects';
+import { apiGetQuestionnaire } from '@api/questionnaire';
+import { getQuestionnaireSucceededAC, getQuestionnaireFailedAC, getQuestionnaireAC } from '@actions/questionnaire'
 
 function* getQuestionnaire(action) {
    try {
-      const questionnaire = yield call(Api.getQuestionnaire, action.payload.questionnaire);
-      yield put({type: "GET_QUESTIONAIRE_SUCCEEDED", questionnaire: questionnaire});
+      const questionnaire = yield call(apiGetQuestionnaire(action.payload.ref));
+      console.log(questionnaire)
+      yield put(getQuestionnaireSucceededAC(questionnaire));
    } catch (e) {
-      yield put({type: "GET_QUESTIONNAIRE_FAILED", message: e.message});
+      yield put(getQuestionnaireFailedAC(e));
    }
 }
 
-function* questionnaireSaga() {
-  yield takeEvery("QUESTIONNAIRE_GET_REQUESTED", getQuestionnaire);
+export function* questionnaireSaga() {
+   yield takeLatest(getQuestionnaireAC, getQuestionnaire);
 }
-
-export default questionnaireSaga;

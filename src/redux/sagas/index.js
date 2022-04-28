@@ -1,6 +1,8 @@
-import createSagaMiddleware from 'redux-saga'
-import { applyMiddleware } from 'redux'
+import { all } from 'redux-saga/effects'
+import { questionnaireSaga } from './questionnaire'
 
-const sagaMiddleware = createSagaMiddleware();
-
-export default applyMiddleware(sagaMiddleware)
+export default function* rootSaga() {
+  yield all([
+    questionnaireSaga()
+  ])
+}
