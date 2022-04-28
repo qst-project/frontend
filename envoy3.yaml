@@ -94,7 +94,7 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: 51.250.82.230
+                      address: localhost
                       port_value: 9091
       http2_protocol_options: {} # Force HTTP/2
       # Your grpc server communicates over TLS. You must configure the transport

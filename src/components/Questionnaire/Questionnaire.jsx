@@ -15,7 +15,7 @@ import {GetQuestionnaireRequest} from "../../proto/questionnaire_pb"
 // )
 
 
-const client = new QuestionnaireServiceClient("http://localhost:9090",  null, null)
+const client = new QuestionnaireServiceClient("http://0.0.0.0:8080",  null, null)
 
 
 const Questionnaire = () => {

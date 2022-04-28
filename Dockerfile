@@ -1,11 +1,11 @@
 FROM envoyproxy/envoy-dev:latest
-COPY envoy3.yaml /etc/envoy/envoy3.yaml
+COPY envoy5.yaml /etc/envoy/envoy5.yaml
 
-ADD ./cert/localhost/localhost.crt /etc/localhost.crt
-ADD ./cert/localhost/localhost.key /etc/localhost-private-key.key
-ADD ./cert/localhost/localhost.csr /etc/localhost-certificate-signing-request.csr
+# ADD ./cert/localhost/localhost.crt /etc/localhost.crt
+# ADD ./cert/localhost/localhost.key /etc/localhost-private-key.key
+# ADD ./cert/localhost/localhost.csr /etc/localhost-certificate-signing-request.csr
 
-RUN chmod go+r /etc/envoy/envoy3.yaml
+RUN chmod go+r /etc/envoy/envoy5.yaml
 
 # FROM envoyproxy/envoy-dev:latest
 
