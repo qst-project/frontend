@@ -8,7 +8,7 @@ export function apiGetQuestionnaire(ref){
     request.setRef(ref);
     return client.getQuestionnaire(request, null, (err, response) => {
         if(err){
-            console.log(err)
+           alert(err.message)
         }
         console.log(response)
     })
