@@ -10,6 +10,8 @@ module.exports = function override(config, env) {
         '@actions': 'src/redux/actions',
         '@reducers': 'src/redux/reducers',
         '@sagas': 'src/redux/sagas',
+        '@api': 'src/api',
+        '@proto': 'src/api/proto'
     })(config);
     return config;
 }
