@@ -17,9 +17,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: rsync over ssh
-        run: rsync -ar --delete * ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:~/backend_temp
+        run: rsync -ar --delete *  ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }}:~/frontend
       - name: docker-compose build
-        run:  ssh ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }} "cd frontend/ && COMPOSE_FILE=docker-compose-dev.yml docker compose build"
+        run: ssh ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }} "cd frontend/ && COMPOSE_FILE=docker-compose-dev.yml docker compose build"
       - name: docker-compose up
-        run:  ssh ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }} "cd frontend/ && COMPOSE_FILE=docker-compose-dev.yml docker compose up -d"
+        run: ssh ${{ secrets.DEV_USER }}@${{ secrets.DEV_HOST }} "cd frontend/ && COMPOSE_FILE=docker-compose-dev.yml docker compose up -d"
 

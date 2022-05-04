@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .my-text-lg {
+    @apply text-xs transition-text duration-700 text-teal-900 dark:text-dark-text-3;
+  }
   .my-text-xs {
     @apply text-xs transition-text duration-700 text-light-text-3 dark:text-dark-text-3;
   }

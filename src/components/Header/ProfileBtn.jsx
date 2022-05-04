@@ -1,8 +1,8 @@
 import React from 'react';
-import {ReactComponent as ProfileLightIcon} from '../../icons/profile-light.svg';
-import {ReactComponent as ProfileDarkIcon} from '../../icons/profile-dark.svg';
+import {ReactComponent as ProfileLightIcon} from '@icons/profile-light.svg';
+import {ReactComponent as ProfileDarkIcon} from '@icons/profile-dark.svg';
 
-const ProfileBtn = () => {
+export default () => {
   return (
     <button className='group relative pl-4 ml-4 flex items-center'>
       <div className='absolute transition-wbg bg-light-headerbtn right-0 dark:bg-dark-headerbtn rounded-full w-[30px] h-[30px] duration-300 group-hover:w-full'></div>
@@ -12,5 +12,3 @@ const ProfileBtn = () => {
     </button>
   );
 };
-
-export default ProfileBtn;

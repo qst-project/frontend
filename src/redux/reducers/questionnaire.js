@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { selectCheckboxAC, selectRadioAC } from "../actions/actions";
+import { selectCheckboxAC, selectRadioAC, getQuestionnaireSucceededAC, getQuestionnaireFailedAC } from "@actions/questionnaire";
 
 const INITIAL_STATE = {
   title: 'My survey',
@@ -57,5 +57,12 @@ export default handleActions({
     for (let answer of answers) answer.checked = false;
     answers[answerID].checked = !answers[answerID].checked;
     return { ...state, questions: questions }
-  }
+  },
+  [getQuestionnaireSucceededAC](state, action) {
+    return { ...state, title: "Все хорошо!" }
+  },
+  [getQuestionnaireFailedAC](state, action) {
+    console.log(action)
+    return { ...state, title: "Все плохо!" }
+  },
 }, INITIAL_STATE)
